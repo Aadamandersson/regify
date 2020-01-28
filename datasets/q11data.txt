@@ -1,0 +1,80 @@
+foo{/}Harry,$$$taoOrangeTue
+foo`NULL{/}Tom,phi$$
+{/}Harry,pi PurpleBLACK
+tao'{/}Harry,2.8Jul2.8
+fubar{/}Harry,Thu3.14153'
+{/}Tom,NILL$$Feb" 
+SatJan{/}Harry,$$foo3.1415
+101111{/}Harry,Sepphi  
+Green{/}Tom,fooMay 
+{/}Phil,VOIDfubarWHITE
+{/}Harry,"010111Jun$$Mon
+$$"WHITEWHITEpi{/}Phil,
+VOIDfoo`3.14153{/}George,chi
+`"PurpleOctYellow{/}Tom,
+fubar{/}George,OrangefubarWHITE 
+2.82.8'Yellow{/}Harry,foo
+$OrangePurple"{/}Edna,pi
+{/}Phil,$$$111110WHITEWHITE3.14
+011111'WHITENULL{/}Tom,Orange
+{/}Harry,"3.14153"Sep$$$
+'WHITEpi{/}Tom,Feb
+WHITE2.8Yellow$$$NILL{/}Edna,
+{/}George,phiFriOcttaoMon
+Green{/}Edna,NILL2.8`
+Sat{/}Harry,fubarNILL'000000
+SatWHITEVOID$$${/}George,$$$
+110001phi$$${/}Tom,
+ 'VOIDVOIDfubar{/}Tom,
+Purple110001chiTue{/}Phil,111001
+{/}Tom,$$$ phi'010100
+2.8WHITE`${/}Harry,$
+BLACK{/}Harry,'NILLRedfoo
+111101Sun{/}Phil,010000"000011
+Tue001111taoWed{/}Harry,blah
+FriOrange{/}Tom,"NILLSun
+Jan{/}Harry,phi$'"
+3.14'{/}Phil,$BLACK2.8
+101000{/}Harry,3.141533.14$$$
+NILLPurple{/}Harry,fubar'Mar
+JanVOID"001111{/}Harry,pi
+ {/}Harry,2.8BLACK`Purple
+chi{/}Phil,2.8ThuGreenThu
+$3.14Dec$$${/}Edna,
+{/}Edna,WHITE$$$JunFeb
+Fri'2.8Purple{/}Phil,$$$
+fooFri3.14pi{/}Phil,WHITE
+Sat011010011011"2.8{/}Tom,
+BLACKRedAug{/}Edna,phiNULL
+Red{/}Tom,JulBLACKSun
+""blah {/}Tom,blah
+{/}Tom,BLACKphiWHITEblahfoo
+3.1415May{/}Tom,3.1415'Sun
+{/}Edna,VOIDfooDecJun
+MonYellow`"foo{/}Tom,
+VOID${/}Edna,'001101
+BLACKNILL{/}Phil,GreenDecNULL
+110111{/}Tom,$111000BLACK 
+ Aug3.1415fubar011010{/}Edna,
+$$$$VOID{/}Tom,3.141533.1415
+Wedfubar$100100phi{/}Phil,
+2.8Purple{/}Phil,taoWHITEYellow
+Yellow$$2.8$${/}Harry,"
+001101NULL'Nov3.14153{/}Tom,
+{/}Tom,SunBLACKblah3.141533.1415
+SatOrangeSunRedWHITE{/}Tom,
+BLACKPurpleRed{/}Phil,FebMon
+WHITE{/}Harry,VOIDchi3.1415chi
+$$VOIDNULL chi{/}Tom,
+fubar{/}Harry,MonApr110000
+011100{/}George,MarFeb`VOID
+{/}Phil,Fri SunSat
+Yellow111000101110$${/}Harry,Purple
+WHITEMon110101NULLtao{/}Harry,
+WedBlueNULLblah3.14153{/}Harry,
+'Redphi{/}Tom,WHITE
+tao`{/}Edna, WHITENILL
+{/}Tom,tao3.14 '$
+010011JulVOIDOrange {/}Tom,
+phi{/}George,VOID001011100101Oct
+ Green{/}Phil,Redtao101111

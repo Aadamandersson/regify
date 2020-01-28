@@ -1,0 +1,80 @@
+[97m"[97mpi[91m[Harry]{George}(Harry)[97mNULL[91m[->2139][97m$$$[97mchi
+[97m`[97mMon[91m[->3794][97mfubar[91m[Phil]{George}(Edna)[97mSun[97mVOID
+[97mRed[97mBlue[91m[->5301][97m3.14153[91m[Edna]{Harry}(Tom)[97m3.1415[97m'
+[97m011100[97m3.1415[91m[Harry]{George}(Phil)[97m3.14[91m[->3511][97m[97m'
+[97m3.14153[97mRed[91m[Tom]{Harry}(Phil)[97mWed[91m[->1559][97mfoo[97m 
+[97m`[97mYellow[91m[Phil]{Edna}(Harry)[97mfoo[91m[->2033][97m$[97m$$
+[97mblah[97mSep[91m[Edna]{Harry}(Tom)[97m'[91m[->6528][97mphi[97m$
+[97mVOID[97mSat[91m[Edna]{Phil}(Harry)[97m'[91m[->3410][97m100100[97mpi
+[97mThu[97mAug[91m[Harry]{George}(Edna)[97m'[91m[->8818][97mMay[97m3.1415
+[97m$$$[97m'[91m[->7580][97m"[91m[Phil]{Edna}(Phil)[97mBLACK[97mGreen
+[97mfubar[97mpi[91m[Harry]{Harry}(Harry)[97mMon[91m[->1692][97mblah[97mchi
+[97m$[97mWHITE[91m[Edna]{Tom}(Phil)[97m [91m[->0575][97m3.14153[97m2.8
+[97m[97mSep[91m[George]{George}(Tom)[97mJun[91m[->7078][97m$$$[97mJun
+[97m`[97m'[91m[->8109][97mRed[91m[Edna]{Edna}(Tom)[97mchi[97mMay
+[97mNILL[97m"[91m[->7721][97m[91m[Harry]{Harry}(Phil)[97mtao[97mFeb
+[97mJun[97mNILL[91m[->6156][97mNILL[91m[Phil]{Tom}(George)[97mWHITE[97mWHITE
+[97mWHITE[97m3.1415[91m[->7626][97m3.14[91m[Harry]{Tom}(Phil)[97m$[97m$$$
+[97m111001[97mSep[91m[->4509][97mtao[91m[Phil]{Harry}(Phil)[97mNILL[97mtao
+[97m'[97mNULL[91m[->2232][97mWHITE[91m[Tom]{George}(Phil)[97m`[97mFeb
+[97mWHITE[97m$$[91m[Harry]{Edna}(George)[97mTue[91m[->1190][97mNILL[97mSat
+[97mFri[97mfubar[91m[Edna]{Harry}(George)[97m"[91m[->2954][97mphi[97m110101
+[97mNILL[97mblah[91m[Phil]{Tom}(Harry)[97mPurple[91m[->7372][97m3.1415[97m3.1415
+[97mNILL[97mBLACK[91m[->5020][97m`[91m[Phil]{Harry}(Tom)[97mVOID[97mWHITE
+[97mTue[97mNILL[91m[->8249][97mDec[91m[George]{Edna}(Tom)[97mfoo[97mThu
+[97mphi[97mBLACK[91m[Harry]{George}(Phil)[97mMay[91m[->3734][97m3.1415[97m'
+[97m$[97mTue[91m[->8723][97mfubar[91m[Phil]{Harry}(Harry)[97mBLACK[97mNov
+[97mOrange[97m[91m[->4324][97m$$[91m[Phil]{Tom}(Tom)[97mtao[97mNULL
+[97m`[97m3.1415[91m[Tom]{Tom}(Phil)[97mPurple[91m[->4720][97mWHITE[97mOrange
+[97mMar[97mWHITE[91m[->9895][97m111000[91m[Phil]{Edna}(Tom)[97mThu[97mfoo
+[97m$[97mOrange[91m[Harry]{Edna}(Tom)[97mfubar[91m[->3745][97mMar[97m101101
+[97mWHITE[97mfoo[91m[->1523][97m`[91m[Phil]{Harry}(Harry)[97m"[97mBLACK
+[97m2.8[97m$$$[91m[George]{Harry}(Harry)[97mNULL[91m[->7625][97mfoo[97mWHITE
+[97mpi[97m[91m[Harry]{Tom}(Tom)[97mNULL[91m[->4889][97m[97mAug
+[97mFri[97mfubar[91m[->8683][97m'[91m[Harry]{Edna}(George)[97mFri[97mSep
+[97mtao[97mBLACK[91m[->6369][97m3.14153[91m[Harry]{George}(Phil)[97m[97mBLACK
+[97m$$$[97m'[91m[Phil]{Tom}(Phil)[97m`[91m[->8900][97m$[97mpi
+[97mOrange[97m111011[91m[George]{Phil}(Phil)[97mThu[91m[->0260][97mWHITE[97m 
+[97mfoo[97mNILL[91m[Phil]{Edna}(George)[97mRed[91m[->9027][97m`[97mVOID
+[97mchi[97mchi[91m[Tom]{Harry}(Edna)[97mApr[91m[->9362][97m$$$[97m
+[97mOrange[97mRed[91m[->5684][97m010000[91m[George]{Edna}(Harry)[97mOrange[97mchi
+[97mchi[97mMar[91m[->0104][97mfoo[91m[George]{Tom}(Edna)[97mphi[97mNILL
+[97mNULL[97m[91m[Edna]{Phil}(Tom)[97m"[91m[->6691][97mtao[97mTue
+[97mFri[97m'[91m[Edna]{Tom}(George)[97m$$$[91m[->2442][97m[97mchi
+[97m[97m'[91m[->8596][97mWHITE[91m[Tom]{George}(George)[97m3.14153[97mphi
+[97mphi[97m001011[91m[Phil]{Tom}(Phil)[97mBlue[91m[->0881][97mpi[97mNov
+[97mPurple[97mBLACK[91m[Tom]{Harry}(George)[97m2.8[91m[->5132][97mJul[97mYellow
+[97mBLACK[97m3.14[91m[Harry]{Harry}(Harry)[97m110000[91m[->9523][97m010011[97mfoo
+[97mRed[97mVOID[91m[Phil]{Tom}(Harry)[97mThu[91m[->1318][97m$$$[97mYellow
+[97mblah[97mBLACK[91m[->9138][97m3.14153[91m[Phil]{Edna}(Harry)[97mNILL[97mBLACK
+[97m [97mVOID[91m[Edna]{George}(Tom)[97mMay[91m[->6384][97m"[97mNULL
+[97m$$$[97mVOID[91m[->9727][97mNILL[91m[Tom]{Edna}(George)[97mBLACK[97m3.14153
+[97m$$[97m [91m[Harry]{Edna}(Phil)[97mBLACK[91m[->2649][97m[97mSep
+[97m$[97m$[91m[->1487][97mfubar[91m[George]{George}(Phil)[97mNULL[97mJun
+[97mNULL[97mtao[91m[Harry]{Edna}(Tom)[97mBLACK[91m[->9498][97mPurple[97m"
+[97mphi[97mphi[91m[->0703][97mfoo[91m[Phil]{Edna}(Phil)[97m'[97mGreen
+[97m001000[97mchi[91m[->9450][97m$[91m[Harry]{Edna}(George)[97mBLACK[97m$
+[97m [97mfoo[91m[Edna]{George}(Harry)[97mVOID[91m[->1207][97mNILL[97m011110
+[97m$$[97mNILL[91m[->5180][97m3.14[91m[George]{Tom}(Phil)[97mBLACK[97mVOID
+[97mpi[97m"[91m[George]{George}(Tom)[97m`[91m[->8249][97mSun[97mRed
+[97m"[97mNILL[91m[->8759][97m[91m[Phil]{Harry}(George)[97m'[97m110100
+[97m [97m$[91m[Harry]{Harry}(Phil)[97mfoo[91m[->0882][97m$$[97mNULL
+[97mNov[97mfoo[91m[Phil]{Harry}(Harry)[97mblah[91m[->0874][97mNULL[97m$$
+[97mFri[97m'[91m[->3636][97mNULL[91m[Edna]{Tom}(Tom)[97m$[97m$
+[97m[97mYellow[91m[Phil]{Edna}(Tom)[97mTue[91m[->4824][97m3.1415[97mNULL
+[97mThu[97mblah[91m[->2259][97mSat[91m[Edna]{Edna}(Harry)[97mOct[97mphi
+[97mThu[97m101101[91m[->6809][97mAug[91m[Edna]{Edna}(Phil)[97m`[97m3.14
+[97m"[97mNILL[91m[->7138][97mpi[91m[George]{Phil}(Edna)[97m001101[97mfoo
+[97m`[97mpi[91m[->7899][97mJul[91m[Tom]{George}(Phil)[97m [97m3.14
+[97m000100[97m$$[91m[->0156][97mWHITE[91m[Tom]{Phil}(Edna)[97m000001[97mRed
+[97mblah[97mBlue[91m[->5697][97m[91m[George]{Tom}(Harry)[97m`[97mFri
+[97mNILL[97m[91m[Edna]{George}(Edna)[97m`[91m[->4548][97mchi[97mBlue
+[97mWHITE[97m$$[91m[George]{George}(Tom)[97mfoo[91m[->2472][97m$[97m$$
+[97m101011[97mBLACK[91m[Harry]{Phil}(George)[97m3.1415[91m[->2927][97mfoo[97m'
+[97m$$$[97mBlue[91m[->2386][97mYellow[91m[Phil]{Tom}(Phil)[97mfubar[97m 
+[97mFeb[97m$$$[91m[Phil]{Phil}(Harry)[97m110000[91m[->0676][97mJun[97m101000
+[97m`[97m[91m[->9580][97mNULL[91m[Phil]{Phil}(Edna)[97m3.14[97m3.1415
+[97m3.14[97m [91m[Phil]{Harry}(Harry)[97mNULL[91m[->0531][97m111001[97mPurple
+[97m$$[97m000000[91m[Phil]{Edna}(Edna)[97mpi[91m[->7992][97mtao[97mJun
+[97m`[97m [91m[->1045][97mVOID[91m[Tom]{Tom}(Phil)[97mBLACK[97mPurple
+[97mphi[97mfubar[91m[Phil]{Tom}(Harry)[97mfubar[91m[->6778][97mchi[97mOrange

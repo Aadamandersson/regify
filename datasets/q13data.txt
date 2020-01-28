@@ -1,0 +1,80 @@
+101100101110:;:<-:;:<-Tue::->:;:<-Tuefoo
+"$$$:;:<-::->NULL::<-::<-pi
+foo3.14153::->:;:<-3.14:;:->:;:<-001111Orange
+pitao::<-:;:->NULL::->:;:->' 
+$$:;:<-::->Red:;:<-::->Tue
+3.14WHITE:;:<-::->`:;:->::<-WedMar
+3.14153WHITE::->:;:<-foo:;:->:;:<-pi$$
+fubar$$::->:;:->Green:;:->:;:->PurpleNILL
+fooBLACK:;:->:;:<-Orange::<-:;:<-Oct
+NULL3.1415::->::<-':;:->:;:->BLACKBlue
+Sep`::<-:;:<-foo:;:<-::->`NULL
+blahApr::->::->Orange:;:<-:;:<-TueWHITE
+fubar:;:->:;:<-Oct:;:<-::<-WHITE3.14153
+'phi:;:->::<-Yellow::<-::->WHITEchi
+3.14153101101::->::<-Thu:;:<-::->2.8010110
+RedNILL::->::->110100:;:->::->VOID
+piMon::<-:;:->$::->:;:<-'"
+Sat"::->:;:<- ::->::->Suntao
+BlueVOID:;:->::<-WHITE:;:->::<-foo$
+$$':;:->::->Sat::<-::<-chifoo
+101110$$::->::->$$$:;:<-::<-VOIDWed
+Yellow`::<-:;:<-VOID:;:<-::->101100100111
+011001Purple::->::<-2.8::->:;:->$$$Blue
+2.8'::<-::<-foo::<-::->Tue3.14
+RedNILL::->:;:->BLACK:;:<-:;:->Tue011011
+fubarDec:;:<-::<-foo::->::->WHITE2.8
+WHITE3.14153:;:->:;:->":;:->::->Purple'
+$3.14:;:->:;:->':;:->::<-taofubar
+phiSun::<-:;:->Purple::<-:;:<-Sep$
+3.14153.1415::<-:;:<-001011:;:->::<-"NULL
+NILL :;:<-::<-VOID:;:->::-> 001100
+Augtao::->:;:->Sat:;:<-:;:->BLACK$$
+pifoo::->:;:->$$::->:;:->RedFeb
+Yellowfubar:;:->::<-VOID:;:->::->NILL$$$
+Mon3.14::<-::<-Purple::->::<-001000$$$
+"011010:;:<-:;:->Thu:;:->::<-Nov$
+$010100:;:<-:;:<-Sat::<-:;:->101110`
+SatNILL:;:<-:;:->NULL:;:->:;:->BLACK'
+TueVOID:;:->:;:<-blah:;:<-::->3.1415pi
+Jul100110::<-:;:<-Tue:;:->::<-VOIDBLACK
+piblah::<-::<-pi::<-::<-JunOrange
+`2.8:;:<-::<-blah:;:<-::<-Sep"
+3.1415 :;:<-:;:-> :;:->::<-PurpleNULL
+Purpletao::<-:;:<-:;:<-::->WHITE
+Fripi:;:->::<-110101::->:;:<-NULLphi
+chiblah::->:;:->BLACK::<-::->110011010111
+tao010111:;:<-:;:->Sep::<-::->FriTue
+fubarNILL::->:;:<-3.14153:;:->::->3.1415NULL
+Wed$$:;:->:;:->Fri::->::<-blahtao
+$$$WHITE::<-:;:<-Sun::->:;:<-chi"
+WHITE3.1415::->:;:<-3.14153::<-:;:->BLACK$
+3.14153foo:;:->:;:<-$::->:;:<-'$$$
+101111 ::->::-> ::->::->$
+"$:;:<-:;:->chi::->::->blahYellow
+Augfoo::<-:;:->2.8:;:->::->PurpleWHITE
+NILLchi:;:<-:;:<-Mon::<-:;:->blah
+WHITE$$$:;:->:;:->phi:;:<-:;:->VOID$$$
+$$Yellow::<-::<-BLACK:;:<-:;:->BLACK
+'NILL::<-:;:->NULL:;:->::<-blahtao
+Wed$$:;:->::->Blue:;:->:;:<-YellowBLACK
+010001$$$::->::->::->::->pifoo
+$$$Purple::<-:;:<-chi::->:;:<-011010Nov
+RedJan::->::->Aug:;:->::<-"NILL
+Wed ::->::->Fri::<-:;:->100110Jun
+blahAug::<-::->Tue::->:;:->'$$$
+Red3.14153:;:<-:;:<-blah:;:<-::->3.14111101
+001111 ::<-::<-foo:;:->:;:<-NULLBlue
+3.14WHITE::->::<-foo:;:->:;:<-3.14"
+NULLOrange:;:<-:;:->::<-:;:<-Mon
+'101100::->:;:<-blah::->:;:<-1110112.8
+piJan:;:<-::->Red:;:<-::<- Fri
+010010pi::<-:;:<-Fri:;:->:;:->WHITESun
+::->::->NILL::->::->3.14153Feb
+blahPurple:;:->::->WHITE:;:->:;:<-VOID 
+3.14chi::->:;:<-phi::->:;:->Tue
+chi :;:->:;:<-'::->::->PurpleThu
+BLACKBlue:;:->:;:<-blah:;:->::->blahJun
+phiOct:;:<-:;:->BLACK::->::->Jul`
+fubar ::<-:;:<-3.14153::->::->VOID3.1415
+NULL3.14153::->::<- :;:<-:;:->fubarfoo

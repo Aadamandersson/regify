@@ -1,0 +1,80 @@
+[97mtao[97m [91m(paris)[97mphi[91m(stockholm)[97mGreen[97mphi
+[97mWHITE[97mPurple[91m(paris)[97mWHITE[91m(tokyo)[97m3.14[97m001110
+[97mFeb[97mGreen[91m(stockholm)[97mBLACK[91m(tokyo)[97mGreen[97mBlue
+[97mNILL[97m3.14[91m(tokyo)[97mFri[91m(stockholm)[97m'[97mJan
+[97mApr[97m111100[91m(tokyo)[97m101111[91m(stockholm)[97mRed[97mVOID
+[97mBLACK[97mNULL[91m(paris)[97m$$[91m(tokyo)[97m$[97m$
+[97m3.14153[97mSat[91m(stockholm)[97mphi[91m(paris)[97m3.14[97m"
+[97mNULL[97mJun[91m(paris)[97m3.14[91m(tokyo)[97m'[97mRed
+[97mPurple[97mBLACK[91m(stockholm)[97mSep[91m(paris)[97m$[97m$$$
+[97m"[97mTue[91m(tokyo)[97mchi[91m(paris)[97m$$[97mMar
+[97m[97mTue[91m(tokyo)[97mBLACK[91m(paris)[97m$[97mPurple
+[97mDec[97m'[91m(stockholm)[97mFri[91m(stockholm)[97mGreen[97m110010
+[97m2.8[97m101001[91m(paris)[97m`[91m(stockholm)[97m [97mfubar
+[97mJul[97mpi[91m(tokyo)[97mMay[91m(paris)[97m$[97mRed
+[97mfoo[97m011000[91m(paris)[97mNULL[91m(tokyo)[97mchi[97m
+[97m010110[97m111111[91m(paris)[97mThu[91m(paris)[97m$$$[97mfubar
+[97mfubar[97mphi[91m(tokyo)[97m [91m(tokyo)[97m [97m3.14
+[97mpi[97mNULL[91m(paris)[97m[91m(stockholm)[97m"[97m
+[97mBLACK[97m [91m(paris)[97m3.14153[91m(stockholm)[97m$$[97m$$$
+[97mVOID[97mBlue[91m(paris)[97mBlue[91m(paris)[97mTue[97mNULL
+[97m`[97m101110[91m(stockholm)[97m011111[91m(tokyo)[97mBLACK[97mNov
+[97m3.1415[97m3.1415[91m(paris)[97m[91m(paris)[97mBLACK[97mRed
+[97m"[97mPurple[91m(tokyo)[97m011001[91m(tokyo)[97mMon[97m$
+[97m3.14[97mWed[91m(stockholm)[97m110111[91m(tokyo)[97m [97m`
+[97mJan[97m [91m(paris)[97m[91m(tokyo)[97mWHITE[97m'
+[97mWHITE[97m$[91m(paris)[97mblah[91m(paris)[97mThu[97mBLACK
+[97m'[97mfoo[91m(stockholm)[97mApr[91m(stockholm)[97mBLACK[97m3.14
+[97m$$[97m3.14[91m(stockholm)[97mBLACK[91m(stockholm)[97m[97m2.8
+[97mWHITE[97m2.8[91m(stockholm)[97mfubar[91m(tokyo)[97mtao[97mSun
+[97m [97mGreen[91m(tokyo)[97m3.14[91m(tokyo)[97mBLACK[97mGreen
+[97m[97m3.14[91m(stockholm)[97mGreen[91m(stockholm)[97mTue[97mBLACK
+[97m$$[97mfoo[91m(stockholm)[97m$$[91m(paris)[97mblah[97m$$
+[97mSat[97mOrange[91m(paris)[97mTue[91m(paris)[97mPurple[97m
+[97m$$$[97m000011[91m(tokyo)[97mJul[91m(tokyo)[97m3.14153[97mtao
+[97mSat[97mVOID[91m(paris)[97mchi[91m(paris)[97mBLACK[97m
+[97m[97mFeb[91m(paris)[97mTue[91m(tokyo)[97m`[97mFri
+[97mphi[97mfubar[91m(tokyo)[97mblah[91m(tokyo)[97m[97m3.14
+[97mphi[97mblah[91m(paris)[97mblah[91m(tokyo)[97mBLACK[97mfoo
+[97mOrange[97mGreen[91m(paris)[97m3.1415[91m(stockholm)[97m010000[97mApr
+[97m2.8[97mSun[91m(paris)[97m111010[91m(paris)[97mtao[97mYellow
+[97m"[97mWHITE[91m(paris)[97m3.14[91m(paris)[97mblah[97m3.14
+[97mBlue[97mWHITE[91m(paris)[97mblah[91m(stockholm)[97mGreen[97mVOID
+[97mBLACK[97mblah[91m(tokyo)[97mRed[91m(stockholm)[97mfoo[97mblah
+[97mtao[97m'[91m(paris)[97mJun[91m(paris)[97m3.1415[97mNILL
+[97m'[97mWHITE[91m(tokyo)[97m[91m(stockholm)[97mBLACK[97m111111
+[97mJul[97mBLACK[91m(stockholm)[97mSat[91m(stockholm)[97m[97m 
+[97mNULL[97mDec[91m(paris)[97mNULL[91m(paris)[97mBLACK[97m 
+[97m2.8[97mfubar[91m(paris)[97mfoo[91m(stockholm)[97mWHITE[97mGreen
+[97m011101[97mVOID[91m(paris)[97mWHITE[91m(stockholm)[97mblah[97mVOID
+[97m[97mApr[91m(tokyo)[97mBlue[91m(paris)[97mfoo[97mphi
+[97mGreen[97mPurple[91m(tokyo)[97mYellow[91m(stockholm)[97mNILL[97mWHITE
+[97m101011[97m"[91m(paris)[97mThu[91m(tokyo)[97mpi[97mNILL
+[97mPurple[97m[91m(paris)[97mfubar[91m(tokyo)[97mJun[97mJul
+[97mfoo[97m"[91m(stockholm)[97mNULL[91m(tokyo)[97m$$$[97m 
+[97m [97mNULL[91m(stockholm)[97m3.1415[91m(stockholm)[97m"[97mfubar
+[97m"[97mblah[91m(tokyo)[97m110101[91m(paris)[97mPurple[97m001101
+[97mchi[97mWHITE[91m(stockholm)[97mNULL[91m(tokyo)[97mJul[97m3.14153
+[97m001111[97mBLACK[91m(stockholm)[97mtao[91m(stockholm)[97m [97mfoo
+[97m$[97m000110[91m(stockholm)[97mGreen[91m(tokyo)[97mBLACK[97m110110
+[97m"[97m [91m(stockholm)[97m111011[91m(paris)[97m3.14153[97mFri
+[97mblah[97mBLACK[91m(paris)[97m3.14[91m(tokyo)[97mNILL[97m 
+[97mfubar[97mfoo[91m(tokyo)[97m$$[91m(stockholm)[97m2.8[97m$$$
+[97mDec[97m010010[91m(tokyo)[97m[91m(paris)[97m$$$[97m110001
+[97mblah[97mfoo[91m(tokyo)[97mOrange[91m(stockholm)[97m [97mNULL
+[97m [97m000011[91m(tokyo)[97mfoo[91m(tokyo)[97m[97mTue
+[97mpi[97m [91m(tokyo)[97mThu[91m(tokyo)[97m'[97m010100
+[97mMon[97mThu[91m(tokyo)[97mSun[91m(stockholm)[97mfoo[97mblah
+[97mBLACK[97mJan[91m(paris)[97mchi[91m(tokyo)[97m2.8[97mMon
+[97m [97mWHITE[91m(tokyo)[97mWed[91m(stockholm)[97m$$$[97m'
+[97mWHITE[97mpi[91m(paris)[97m$$[91m(stockholm)[97m2.8[97m 
+[97mNULL[97m[91m(stockholm)[97mblah[91m(paris)[97mAug[97m001101
+[97m2.8[97m'[91m(paris)[97mSun[91m(paris)[97m$$$[97mTue
+[97mVOID[97mJun[91m(paris)[97m2.8[91m(paris)[97mtao[97m
+[97mphi[97mBLACK[91m(paris)[97m [91m(tokyo)[97m'[97m
+[97m001001[97m$$[91m(tokyo)[97mblah[91m(stockholm)[97mNULL[97mchi
+[97m3.1415[97m100110[91m(paris)[97m3.14[91m(tokyo)[97mtao[97mblah
+[97mTue[97m"[91m(stockholm)[97m'[91m(paris)[97m3.14153[97mFri
+[97m$$[97m3.14[91m(paris)[97mNULL[91m(stockholm)[97m'[97m
+[97mRed[97m101010[91m(stockholm)[97m011111[91m(tokyo)[97mDec[97m3.1415
+[97mMay[97mMay[91m(tokyo)[97m'[91m(stockholm)[97mphi[97m$$$
