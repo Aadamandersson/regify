@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import sys
-from lexer import Lexer
+from lexer import Lexer, Token
+import re
+import difflib
 
 class NRange:
     def __init__(self, text, start, end=None):
@@ -16,15 +18,27 @@ class NRange:
         else:
             return "[{0}]{{{1},{2}}}".format(self.text, self.start, self.end)
 
+    def __new__(self, text, start, end=None):
+        if start in ['*', '+']:
+            return "[{0}]{{,}}".format(text)
+        if end is None:
+            return "[{0}]{{{1}}}".format(text, start)
+        else:
+            return "[{0}]{{{1},{2}}}".format(text, start, end)
 
 class NText:
     def __init__(self, text, next_tok):
         self.text = text
         self.next_tok = next_tok
+
     def __str__(self):
         if self.next_tok == "range" and self.text == '[':
             return '\\' + self.text
         return self.text
+    def __new__(self, text, next_tok):
+        if next_tok == "range" and text == '[':
+            return '\\' + text
+        return text
 
 class Parser:
     def __init__(self, tokens):
@@ -84,8 +98,12 @@ class Parser:
 
 
 
-#grep -o '\[[A-Z][a-z]\{,\}->]'
-#[range(“A-Z”,1)range(“a-z”, *)->]
+def read_file(fn):
+    src = ""
+    with open(fn, "r") as f:
+        src = f.read()
+    return src
+
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Expected argument: {} <filename>".format(sys.argv[0]))
@@ -94,17 +112,25 @@ if __name__ == '__main__':
     source_code = ""
     with open(sys.argv[1], "r") as f:
         source_code = f.read()
-    print("SOURCE: {}".format(source_code))
-    print("RESULT:")
+    print("SOURCE:\n{}".format(source_code))
     lexer = Lexer(source_code)
     parser = Parser(lexer.lex())
     expr = parser.parse()
-
+    pattern = ""
     for e in expr:
-        print(e, end='')
-    print()
+        pattern += e
+    print("RESULT:\n{}".format(pattern))
+    m = re.findall(pattern, read_file("datasets/q4data.txt"))
+    res = ""
+    for r in m:
+        res += r + '\n'
 
-
+    d = difflib.Differ()
+    diff = difflib.unified_diff([read_file("datasets/q4hits.txt")], [res], lineterm='')
+    if '\n'.join(diff) is not '':
+        print("MATCH FAILED:\n\n{}".format('\n'.join(diff)))
+    else:
+        print("SUCCESSFULLY MATCHED")
 
 
 

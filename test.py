@@ -16,6 +16,7 @@ def make_test(num, pattern):
     target = read_file(f_hits)
     result = re.findall(pattern, source)
     print(result)
+
     str_res = ""
     for i in result:
         str_res += i + '\n'
@@ -24,26 +25,44 @@ def make_test(num, pattern):
     print("TEST: {}".format(num))
     return ('\n'.join(diff) is '', '\n'.join(diff))
 
+def make_test_grp(num, pattern):
+    f_data = "datasets/q{}data.txt".format(num)
+    f_hits = "datasets/q{}hits.txt".format(num)
+    source = read_file(f_data)
+    target = read_file(f_hits)
+    result = re.findall(pattern, source)
+    print(result)
+
+    str_res = ""
+    for i in result[0]:
+        str_res += i + '\n'
+    d = difflib.Differ()
+    diff = difflib.unified_diff([target], [str_res], lineterm='')
+    print("TEST: {}".format(num))
+    return ('\n'.join(diff) is '', '\n'.join(diff))
 if __name__ == '__main__':
     passed = True
-    #passed, out = make_test(1, '\[[0-9]{4}::]')
+    passed, out = make_test(1, '\[[0-9]{4}::]')
     if passed is True:
         print("Passed")
     else:
         print("Failed: \n{}\n".format(out))
-
+    passed, out = make_test(4, '\[[A-Z]{1}[a-z]{,}->]')
+    if passed is True:
+        print("Passed")
+    else:
+        print("Failed: \n{}\n".format(out))
     #passed, out = make_test(6, '[-|>|<]{12}')
     
-    if passed is True:
-        print("Passed")
-    else:
-        print("Failed: \n{}\n".format(out))
-    #grep -o '\([\.,][:;]\{2,3\}\)\{2\}\|\[[/\\][A-Z][a-z]\{,\}]'
-#([\.,][:;]{2,3}){2}|\[[/\\][A-Z][a-z]{0,}]
-    passed, out = make_test(10, '([\.,][:;]{2,3}){2}|\[[/\\][A-Z][a-z]{0,}]')
+    #if passed is True:
+        #print("Passed")
+    #else:
+        #print("Failed: \n{}\n".format(out))
     
-    if passed is True:
-        print("Passed")
-    else:
-        print("Failed: \n{}\n".format(out))
+    #passed, out = make_test_grp(10, r'(([\.,][:;]{2,3}){2})|(\[[/\\][A-Z][a-z]{,}])')
+    
+    #if passed is True:
+        #print("Passed")
+    #else:
+        #print("Failed: \n{}\n".format(out))
 
