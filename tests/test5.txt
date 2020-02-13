@@ -1,0 +1,12 @@
+repeat(2, 
+    varchar("a-z", 1, 3)
+)
+
+ANY(
+    TEXT("HELLO"),
+    TEXT("HELLO"),
+    TEXT("HELLO"),
+    TEXT("HELLO")
+)
+
+HELLO|HELLO|HELLO..

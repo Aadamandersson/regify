@@ -40,6 +40,21 @@ class NText:
             return '\\' + text
         return text
 
+class NRepeat:
+    def __init__(self, num, child):
+        self.num = num
+        self.child = child
+    def __str__(self):
+        ret = ""
+        for i in range(0, self.num):
+            ret += child
+        return ret
+    def __new__(self, num, child):
+        ret = ""
+        for i in range(0, int(num)):
+            ret += child
+        return ret
+        
 class Parser:
     def __init__(self, tokens):
         self.tokens = tokens
@@ -65,33 +80,57 @@ class Parser:
             return False
         self.get_next_token()
         return True
-    
+
+    def parse_varchar(self):
+        self.get_next_token()
+        self.expect(Token.L_PAREN.name)
+        arg1 = self.curr_token[1]
+        self.expect(Token.STRING.name)
+        self.get_next_token()
+        arg2 = self.curr_token[1]
+        self.expect(Token.NUM.name)
+        if self.accept(Token.R_PAREN.name):
+            return NVarChar(arg1, arg2)
+        else:
+            self.get_next_token()
+            arg3 = self.curr_token[1]
+            self.expect(Token.NUM.name)
+            return NVarChar(arg1, arg2, arg3)
+
+    def parse_text(self):
+        self.get_next_token()
+        self.expect(Token.L_PAREN.name)
+        arg1 = self.curr_token[1]
+        self.expect(Token.STRING.name)
+        self.expect(Token.R_PAREN.name)
+        return NText(arg1, self.curr_token[1])
+
     def parse(self):
         expr = []
         while self.tok_idx < len(self.tokens):
             if self.curr_token[0] is Token.IDENT.name:
                 if self.curr_token[1] == "varchar":
-                    self.get_next_token()
-                    self.expect(Token.L_PAREN.name)
-                    arg1 = self.curr_token[1]
-                    self.expect(Token.STRING.name)
-                    self.get_next_token()
-                    arg2 = self.curr_token[1]
-                    self.expect(Token.NUM.name)
-                    if self.accept(Token.R_PAREN.name):
-                        expr.append(NVarChar(arg1, arg2))
-                    else:
-                        self.get_next_token()
-                        arg3 = self.curr_token[1]
-                        self.expect(Token.NUM.name)
-                        expr.append(NVarChar(arg1, arg2, arg3))
+                    expr.append(self.parse_varchar())
                 elif self.curr_token[1] == "text":
-                    self.get_next_token()
+                    expr.append(self.parse_text())
+                elif self.curr_token[1] == "repeat":
+                    self.get_next_token()  # eat 'repeat'
                     self.expect(Token.L_PAREN.name)
                     arg1 = self.curr_token[1]
-                    self.expect(Token.STRING.name)
-                    self.expect(Token.R_PAREN.name)
-                    expr.append(NText(arg1, self.curr_token[1]))
+                    self.expect(Token.NUM.name)
+                    self.get_next_token() # ','
+                    # what ident is it?
+
+                    arg2 = None
+                    if (self.curr_token[1] == "varchar"):
+                        arg2 = self.parse_varchar()
+                    elif (self.curr_token[1] == "text"):
+                        arg2 = self.parse_text()
+                    else:
+                        # syntax error
+                        arg2 = self.curr_token[1]
+                    if (self.accept(Token.R_PAREN.name)):
+                        expr.append(NRepeat(arg1, arg2))
             else:
                 self.get_next_token()
         return expr
