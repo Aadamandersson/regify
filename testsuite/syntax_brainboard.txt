@@ -1,0 +1,20 @@
+TEXT([) RANGE(A-Z : 1) RANGE(a-z : 2 : 4) TEXT(->])
+
+TEXT "[" RANGE(A-Z : 1) RANGE(a-z : 2 : 4) TEXT "->]"
+
+TEXT("[") VARCHAR(A-Z, 1) VARCHAR(a-z, 1, * ) TEXT("->]")
+
+introducing keywords "REPEAT" and "ANY"
+TEXT("{/}")
+REPEAT( 2,
+    ANY(
+        TEXT("Harry"),
+        TEXT("Tom"),
+        TEXT("Phil"),
+        TEXT("Edna"),
+        TEXT("George"),
+        VARCHAR("A-Z", 5, *),
+        VARCHAR("0572+-/\", 1)
+    )
+)
+TEXT("{/}")
