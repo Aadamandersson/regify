@@ -1,1 +1,1 @@
-range("A-Z", 1) range("a-z", 1, *)
+varchar("A-Z", 1) varchar("a-z", 1, *)

@@ -1,1 +1,1 @@
-range("A-Z", 1, 3)
+varchar("A-Z", 1, 3)

@@ -1,1 +1,1 @@
-text("[") range("A-Z", 1) range("a-z", *) text("->]")
+text("[") varchar("A-Z", 1) varchar("a-z", *) text("->]")

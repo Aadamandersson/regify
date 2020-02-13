@@ -4,7 +4,7 @@ from lexer import Lexer, Token
 import re
 import difflib
 
-class NRange:
+class NVarChar:
     def __init__(self, text, start, end=None):
         self.text = text
         self.start = start
@@ -32,11 +32,11 @@ class NText:
         self.next_tok = next_tok
 
     def __str__(self):
-        if self.next_tok == "range" and self.text == '[':
+        if self.next_tok == "varchar" and self.text == '[':
             return '\\' + self.text
         return self.text
     def __new__(self, text, next_tok):
-        if next_tok == "range" and text == '[':
+        if next_tok == "varchar" and text == '[':
             return '\\' + text
         return text
 
@@ -70,7 +70,7 @@ class Parser:
         expr = []
         while self.tok_idx < len(self.tokens):
             if self.curr_token[0] is Token.IDENT.name:
-                if self.curr_token[1] == "range":
+                if self.curr_token[1] == "varchar":
                     self.get_next_token()
                     self.expect(Token.L_PAREN.name)
                     arg1 = self.curr_token[1]
@@ -79,12 +79,12 @@ class Parser:
                     arg2 = self.curr_token[1]
                     self.expect(Token.NUM.name)
                     if self.accept(Token.R_PAREN.name):
-                        expr.append(NRange(arg1, arg2))
+                        expr.append(NVarChar(arg1, arg2))
                     else:
                         self.get_next_token()
                         arg3 = self.curr_token[1]
                         self.expect(Token.NUM.name)
-                        expr.append(NRange(arg1, arg2, arg3))
+                        expr.append(NVarChar(arg1, arg2, arg3))
                 elif self.curr_token[1] == "text":
                     self.get_next_token()
                     self.expect(Token.L_PAREN.name)
