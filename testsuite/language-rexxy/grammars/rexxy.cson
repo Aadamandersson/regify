@@ -1,0 +1,6 @@
+name: 'Rexxy'
+scopeName: 'rexxy'
+type: 'tree-sitter'
+parser: 'tree-sitter-javascript'
+
+fileTypes: ['rgx', 'rms']

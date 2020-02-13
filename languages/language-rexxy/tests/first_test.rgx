@@ -1,0 +1,14 @@
+# comment
+TEXT("{/}")
+REPEAT( 2,
+    ANY(
+        TEXT("Harry"),
+        TEXT("Tom"),
+        TEXT("Phil"),
+        TEXT("Edna"),
+        TEXT("George"),
+        VARCHAR("A-Z", 5, *),
+        VARCHAR("0572+-/\|\"", 1)
+    )
+)
+TEXT('{/}\'')
