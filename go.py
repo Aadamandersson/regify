@@ -56,20 +56,23 @@ class NRepeat:
         return ret
 
 class NAny:
-    def __init__(self, *args):
-        pass
+    def __init__(self, children):
+        self.children = children
         
     def __str__(self):
         ret = ""
+        delim = ""
         for i in range(0, len(args)):
-            ret += args[i] + "|"
+            ret += delim + args[i]
+            delim = "|"
         return ret
 
-    def __new__(self, *args):
+    def __new__(self, children):
         ret = ""
-        for i in range(0, len(args)):
-            ret += args[i] + "|"
-
+        delim = ""
+        for i in range(0, len(children)):
+            ret += delim + children[i]
+            delim = "|"
         return ret
 
         
@@ -153,14 +156,15 @@ class Parser:
                 elif self.curr_token[1] == "any":
                     self.get_next_token()
                     self.expect(Token.L_PAREN.name)
+                children = []
                 while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
                     if (self.curr_token[1] == "varchar"):
-                        expr.append(NAny(self.parse_varchar()))
+                        children.append(self.parse_varchar())
                     elif (self.curr_token[1] == "text"):
-                        expr.append(NAny(self.parse_text()))
+                        children.append(self.parse_text())
                     elif (self.curr_token[1] == "repeat"):
-                        expr.append(NAny(self.parse_repeat()))
-
+                        children.append(self.parse_repeat())
+                expr.append(NAny(children))
                 self.expect(Token.R_PAREN.name)
 
             else:
