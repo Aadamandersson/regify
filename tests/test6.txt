@@ -1,0 +1,4 @@
+any(
+    text("hello"),
+    text("world")
+)

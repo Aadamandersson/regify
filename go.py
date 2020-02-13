@@ -54,6 +54,24 @@ class NRepeat:
         for i in range(0, int(num)):
             ret += child
         return ret
+
+class NAny:
+    def __init__(self, *args):
+        pass
+        
+    def __str__(self):
+        ret = ""
+        for i in range(0, len(args)):
+            ret += args[i] + "|"
+        return ret
+
+    def __new__(self, *args):
+        ret = ""
+        for i in range(0, len(args)):
+            ret += args[i] + "|"
+
+        return ret
+
         
 class Parser:
     def __init__(self, tokens):
@@ -105,6 +123,23 @@ class Parser:
         self.expect(Token.R_PAREN.name)
         return NText(arg1, self.curr_token[1])
 
+    def parse_repeat(self):
+        self.get_next_token()  # eat 'repeat'
+        self.expect(Token.L_PAREN.name)
+        arg1 = self.curr_token[1]
+        self.expect(Token.NUM.name)
+        self.get_next_token() # ','
+        arg2 = None
+        if (self.curr_token[1] == "varchar"):
+            arg2 = self.parse_varchar()
+        elif (self.curr_token[1] == "text"):
+            arg2 = self.parse_text()
+        else:
+            # syntax error
+            arg2 = self.curr_token[1]
+        if (self.accept(Token.R_PAREN.name)):
+            return NRepeat(arg1, arg2)
+
     def parse(self):
         expr = []
         while self.tok_idx < len(self.tokens):
@@ -114,23 +149,20 @@ class Parser:
                 elif self.curr_token[1] == "text":
                     expr.append(self.parse_text())
                 elif self.curr_token[1] == "repeat":
-                    self.get_next_token()  # eat 'repeat'
+                    expr.append(self.parse_repeat())
+                elif self.curr_token[1] == "any":
+                    self.get_next_token()
                     self.expect(Token.L_PAREN.name)
-                    arg1 = self.curr_token[1]
-                    self.expect(Token.NUM.name)
-                    self.get_next_token() # ','
-                    # what ident is it?
-
-                    arg2 = None
+                while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
                     if (self.curr_token[1] == "varchar"):
-                        arg2 = self.parse_varchar()
+                        expr.append(NAny(self.parse_varchar()))
                     elif (self.curr_token[1] == "text"):
-                        arg2 = self.parse_text()
-                    else:
-                        # syntax error
-                        arg2 = self.curr_token[1]
-                    if (self.accept(Token.R_PAREN.name)):
-                        expr.append(NRepeat(arg1, arg2))
+                        expr.append(NAny(self.parse_text()))
+                    elif (self.curr_token[1] == "repeat"):
+                        expr.append(NAny(self.parse_repeat()))
+
+                self.expect(Token.R_PAREN.name)
+
             else:
                 self.get_next_token()
         return expr
