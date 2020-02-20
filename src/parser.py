@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import sys
 from token import Token
 from ast import *
 
@@ -85,6 +86,23 @@ class Parser:
         self.expect(Token.R_PAREN.name)
         return ret
 
+    def parse_capture_group(self):
+        self.get_next_token()
+        self.expect(Token.L_PAREN.name)
+        capture = []
+        ret = None
+        while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
+            if (self.curr_token[1] == "varchar"):
+                capture.append(self.parse_varchar())
+            elif (self.curr_token[1] == "text"):
+                capture.append(self.parse_text())
+            elif (self.curr_token[1] == "repeat"):
+                capture.append(self.parse_repeat())
+            elif (self.curr_token[1] == "any"):
+                capture.append(self.parse_any())
+        ret = NCaptureGroup(capture)
+        self.expect(Token.R_PAREN.name)
+        return ret
 
 
     def parse(self):
@@ -99,6 +117,8 @@ class Parser:
                     expr.append(self.parse_repeat())
                 elif self.curr_token[1] == "any":
                     expr.append(self.parse_any())
+                elif self.curr_token[1] == "group":
+                    expr.append(self.parse_capture_group())
             else:
                 self.get_next_token()
         return expr

@@ -33,6 +33,7 @@ class NText:
         if self.next_tok == "varchar" and self.text == '[':
             return '\\' + self.text
         return self.text
+
     def __new__(self, text, next_tok):
         if next_tok == "varchar" and text == '[':
             return '\\' + text
@@ -42,12 +43,13 @@ class NRepeat:
     def __init__(self, num, child):
         self.num = num
         self.child = child
+
     def __str__(self):
         ret = ""
         for _ in range(0, self.num):
             ret += self.child
         return ret
-        
+
     def __new__(self, num, child):
         ret = ""
         for _ in range(0, int(num)):
@@ -73,3 +75,23 @@ class NAny:
             ret += delim + children[i]
             delim = "|"
         return ret
+
+
+class NCaptureGroup:
+    def __init__(self, capture):
+        self.capture = capture
+
+    def __str__(self):
+        ret = "("
+        for i in range(0, len(self.capture)):
+            ret += self.capture[i]
+        return ret + ")"
+
+    def __new__(self, capture):
+        ret = "("
+        for i in range(0, len(capture)):
+            ret += capture[i]
+        return ret + ")"
+
+
+
