@@ -9,8 +9,10 @@ class Parser:
         self.curr_token = 0
         self.tok_idx = -1
         self.get_next_token() 
+        self.curr_ident = ""
     
     def get_next_token(self):
+        self.prev_token = self.curr_token
         self.tok_idx += 1
         if self.tok_idx < len(self.tokens):
             self.curr_token = self.tokens[self.tok_idx]
@@ -18,8 +20,8 @@ class Parser:
     
     def expect(self, tok_typ):
         if self.curr_token[0] is not tok_typ:
-            print("Syntax error: expected {} found {}\n".format(
-                tok_typ, self.curr_token[0]))
+            print("Syntax error: expected {} found {} in {}\n".format(
+                tok_typ, self.curr_token[0], self.curr_ident))
             sys.exit(1)
         self.get_next_token()
 
@@ -60,9 +62,11 @@ class Parser:
         self.expect(Token.NUM.name)
         self.get_next_token() 
         arg2 = None
-        if (self.curr_token[1] == "varchar"):
+        if self.curr_token[1] in ["varchar", "VARCHAR"]:
+            self.curr_ident = "VARCHAR"
             arg2 = self.parse_varchar()
-        elif (self.curr_token[1] == "text"):
+        elif self.curr_token[1] in ["text", "TEXT"]:
+            self.curr_ident = "TEXT"
             arg2 = self.parse_text()
         else:
             # syntax error
@@ -76,11 +80,14 @@ class Parser:
         children = []
         ret = None
         while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
-            if (self.curr_token[1] == "varchar"):
+            if self.curr_token[1] in ["varchar", "VARCHAR"]:
+                self.curr_ident = "VARCHAR"
                 children.append(self.parse_varchar())
-            elif (self.curr_token[1] == "text"):
+            elif self.curr_token[1] in ["text", "TEXT"]:
+                self.curr_ident = "TEXT"
                 children.append(self.parse_text())
-            elif (self.curr_token[1] == "repeat"):
+            elif self.curr_token[1] in ["repeat", "REPEAT"]:
+                self.curr_ident = "REPEAT"
                 children.append(self.parse_repeat())
         ret = NAny(children)
         self.expect(Token.R_PAREN.name)
@@ -92,13 +99,17 @@ class Parser:
         capture = []
         ret = None
         while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
-            if (self.curr_token[1] == "varchar"):
+            if self.curr_token[1] in ["varchar", "VARCHAR"]:
+                self.curr_ident = "VARCHAR"
                 capture.append(self.parse_varchar())
-            elif (self.curr_token[1] == "text"):
+            elif self.curr_token[1] in ["text", "TEXT"]:
+                self.curr_ident = "TEXT"
                 capture.append(self.parse_text())
-            elif (self.curr_token[1] == "repeat"):
+            elif self.curr_token[1] in ["repeat", "REPEAT"]:
+                self.curr_ident = "REPEAT"
                 capture.append(self.parse_repeat())
-            elif (self.curr_token[1] == "any"):
+            elif self.curr_token[1] in ["any", "ANY"]:
+                self.curr_ident = "ANY"
                 capture.append(self.parse_any())
         ret = NCaptureGroup(capture)
         self.expect(Token.R_PAREN.name)
@@ -109,15 +120,15 @@ class Parser:
         expr = []
         while self.tok_idx < len(self.tokens):
             if self.curr_token[0] is Token.IDENT.name:
-                if self.curr_token[1] == "varchar":
+                if self.curr_token[1] in ["varchar", "VARCHAR"]:
                     expr.append(self.parse_varchar())
-                elif self.curr_token[1] == "text":
+                elif self.curr_token[1] in ["text", "TEXT"]:
                     expr.append(self.parse_text())
-                elif self.curr_token[1] == "repeat":
+                elif self.curr_token[1] in ["repeat", "REPEAT"]:
                     expr.append(self.parse_repeat())
-                elif self.curr_token[1] == "any":
+                elif self.curr_token[1] in ["any", "ANY"]:
                     expr.append(self.parse_any())
-                elif self.curr_token[1] == "group":
+                elif self.curr_token[1] in ["group", "GROUP"]:
                     expr.append(self.parse_capture_group())
             else:
                 self.get_next_token()

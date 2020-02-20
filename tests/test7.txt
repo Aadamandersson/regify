@@ -1,7 +1,7 @@
 group(
 	text("hello"),
 	any(
-		varchar("var", 1, 2),
+		varchar("var"),
 		text("text")
 	)
 )
