@@ -1,0 +1,64 @@
+{% extends "header.html" %}
+{% block title %}RMS{% endblock %}
+
+{% block content %}
+
+<style>
+
+ul.nav-pills {
+    position: fixed;
+}
+div.col-sm-9 div {
+    height: 250px;
+    font-size: 28px;
+}
+#section1 {color: #fff; background-color: #1E88E5; height:600px;}
+#section2 {color: #fff; background-color: #673ab7; height:600px;}
+#section3 {color: #fff; background-color: #ff9800; height:600px;}
+#section41 {color: #fff; background-color: #00bcd4; height:600px;}
+#section42 {color: #fff; background-color: #009688; height:600px;}
+
+@media screen and (max-width: 810px) {
+	#section1, #section2, #section3, #section41, #section42  {
+		margin-left: 150px;
+	}
+}
+
+</style>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+
+  <div class="container">
+    <div class="row">
+      <nav class="col-sm-3" id="myScrollspy">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#section1">Section 1</a></li>
+          <li><a href="#section2">Section 1</a></li>
+          <li><a href="#section3">Section 1</a></li>
+          <li><a href="#section41">Section 1</a></li>
+          <li><a href="#section42">Section 1</a></li>
+
+        </ul>
+      </nav>
+      <div class="col-sm-9">
+        <div id="section1">
+          <h1>Section 1</h1>
+          <p>Try to scroll this page and look at the navigation list while scrolling!</p>
+        </div>
+
+        <div id="section2">
+          <h1>Section 2</h1>
+          <p>Try to scroll this page and look at the navigation list while scrolling!</p>
+        </div>
+
+        <div id="section3">
+          <h1>Section 3</h1>
+          <p>Try to scroll this page and look at the navigation list while scrolling!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "header.html" %}
+{% block title %}RMS{% endblock %}
+
+{% block content %}
+<body class="bg-light">
+    <main role="main">
+
+        <section class="jumbotron text-center shadow">
+            <div class="container">
+                <h1 class="jumbotron-heading">RMS Testsuite</h1>
+                <p class="lead text-muted">Regular expressions made simple</p>
+                <p>
+                    <a href="/" class="btn btn-dark">Dashboard</a>
+                    <a href="/regulations" class="btn btn-dark">API Documentation</a>
+                </p>
+            </div>
+        </section>
+        <form method="post" name="post_data">
+            <div>
+                <div class="container" style="padding-top:30px">
+                    <div class="row">
+                        <div id="top3" class="col-md-4" style="margin-right: auto; margin-left: auto;">
+                            <div class="card mb-4 shadow-sm" style="height:100%">
+                                <div class="card-body">
+                                    <label style="height:85%">
+                                        <strong style="font-size: 16pt;">Readability</strong>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat </p>
+                                    </label>
+                                    <button style="width:100%;" type="submit" class="btn btn-dark" name="btn"
+                                        value="Search" id="search">Go</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="top3" class="col-md-4" style="margin-right: auto; margin-left: auto;">
+                            <div class="card mb-4 shadow-sm" style="height:100%">
+                                <div class="card-body">
+                                    <label style="height:85%">
+                                        <strong style="font-size: 16pt;">Maintainability</strong>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat </p>
+                                    </label>
+                                    <button style="width:100%;" type="submit" class="btn btn-dark" name="btn"
+                                        value="Search" id="search">Go</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="top3" class="col-md-4" style="margin-right: auto; margin-left: auto; ">
+                            <div class="card mb-4 shadow-sm" style="height:100%">
+                                <div class="card-body">
+                                    <label style="height:85%">
+                                        <strong style="font-size: 16pt;">Usability</strong>
+                                        <p>Lorem re eu fugiat </p>
+                                    </label>
+                                    <button style="width:100%;" type="submit" class="btn btn-dark" name="btn"
+                                        value="Search" id="search">Go</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+
+{% endblock %}

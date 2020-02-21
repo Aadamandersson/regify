@@ -1,4 +1,4 @@
-# Testcase level: Intermediate
+# Testcase level: intermediate
 TEXT("{/}")
 REPEAT( 2,
     ANY(
