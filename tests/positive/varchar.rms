@@ -1,0 +1,5 @@
+VARCHAR("A-Z", 1)
+VARCHAR("test", 1, 2)
+VARCHAR("0-9", *)
+VARCHAR("0-9", 2, *)
+

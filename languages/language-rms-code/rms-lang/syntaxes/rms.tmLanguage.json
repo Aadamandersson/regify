@@ -1,0 +1,41 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Rms",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.rms",
+				"match": "\\b(ANY|any|TEXT|text|VARCHAR|varchar|repeat|REPEAT|GROUP|group)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.rms",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.rms",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"numbers": {
+		"patterns": [{
+			"name": "constant.numeric.rms",
+			"match": "[0-9]"
+		}]
+	},
+	"scopeName": "source.rms"
+}
