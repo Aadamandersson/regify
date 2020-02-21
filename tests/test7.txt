@@ -1,8 +1,9 @@
 group(
 	text("hello"),
 	any(
-		varchar("var"),
-		text("text")
+		varchar("var",1),
+		text("text"),
+		varchar("a-z"),
 	)
 )
 

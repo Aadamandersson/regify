@@ -21,7 +21,7 @@ if __name__ == '__main__':
         source_code = f.read()
     print("SOURCE:\n{}".format(source_code))
     lexer = Lexer(source_code)
-    parser = Parser(lexer.lex())
+    parser = Parser(lexer)
     expr = parser.parse()
     pattern = ""
     for e in expr:

@@ -13,7 +13,7 @@ class Lexer:
 
     def next_pos(self):
         self.char_idx += 1
-        if self.curr_char == '\n':
+        if self.curr_char is '\n':
             self.row += 1
             self.col = 0
         self.col += 1

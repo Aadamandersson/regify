@@ -2,40 +2,17 @@
 import sys
 from token import Token
 from ast import *
-
-class Error:
-
-
-    def __init__(self, expected, found, ident, row, col):
-        self.expected = expected
-        self.found = found
-        self.ident = ident
-        self.row = row
-        self.col = col
-        # red, green, end
-        self.colors = ['\033[91m', '\033[92m', '\033[0m']
-       
-    def __str__(self):
-        se = "{}Syntax Error: {}".format(self.colors[0], self.colors[2])
-        return """
-        {}expected {} found {} in {}\n
-        at line {}, col {}\n
-        """.format(se, self.expected, self.found, 
-                self.ident, self.row, self.col)
-
+from error import Error
 
 class Parser:
-    def __init__(self, tokens):
-        self.tokens = tokens
+    def __init__(self, lexer):
+        self.tokens = lexer.lex()
+        self.source_code = lexer.source_code
         self.curr_token = 0
         self.tok_idx = -1
         self.get_next_token() 
         self.curr_ident = ""
    
-    def show_example(self, ident):
-        if ident in ["varchar", "VARCHAR"]:
-            print('Example usage: VARCHAR("A-Z", 1, 2)\nNote: Third argument is optional.')
-
     def get_next_token(self):
         self.prev_token = self.curr_token
         self.tok_idx += 1
@@ -45,8 +22,7 @@ class Parser:
     
     def expect(self, tok_typ):
         if self.curr_token[0] is not tok_typ:
-            print(Error(tok_typ, self.curr_token[0], self.curr_ident, self.curr_token[2], self.curr_token[3]))
-            self.show_example(self.curr_ident)
+            print(Error(tok_typ, self.curr_token[0], self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code))
             sys.exit(1)
         self.get_next_token()
 
