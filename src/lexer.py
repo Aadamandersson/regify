@@ -1,14 +1,25 @@
 #!/usr/bin/env python3
 from token import Token
 
+
+
 class Lexer:
     def __init__(self, source_code):
         self.source_code = source_code
         self.curr_char = ''
         self.char_idx = -1
+        self.col = 0
+        self.row = 1
+
+    def next_pos(self):
+        self.char_idx += 1
+        if self.curr_char is '\n':
+            self.row += 1
+            self.col = 0
+        self.col += 1
 
     def get_next_char(self):
-        self.char_idx += 1
+        self.next_pos()
         if self.char_idx < len(self.source_code):
             self.curr_char = self.source_code[self.char_idx] 
         else:
@@ -52,24 +63,24 @@ class Lexer:
         tokens = []
         while self.curr_char is not '\0':
             if self.curr_char.isalpha():
-                tokens.append((Token.IDENT.name, self.create_new_ident()))
+                tokens.append((Token.IDENT.name, self.create_new_ident(), self.row, self.col))
             elif self.curr_char.isdigit() or self.curr_char in ['*', '+']:
-                tokens.append((Token.NUM.name, self.create_new_num()))
+                tokens.append((Token.NUM.name, self.create_new_num(), self.row, self.col))
             elif self.curr_char is '(':
-                tokens.append((Token.L_PAREN.name, self.curr_char))
+                tokens.append((Token.L_PAREN.name, self.curr_char, self.row, self.col))
                 self.get_next_char()
             elif self.curr_char is ')':
-                tokens.append((Token.R_PAREN.name, self.curr_char))
+                tokens.append((Token.R_PAREN.name, self.curr_char, self.row, self.col))
                 self.get_next_char()
             elif self.curr_char is '"':
-                tokens.append((Token.STRING.name, self.create_new_str()))
+                tokens.append((Token.STRING.name, self.create_new_str(), self.row, self.col))
             elif self.curr_char in [' ', '\t', '\n', '']:
                 self.get_next_char()
             elif self.curr_char is ',':
-                tokens.append((Token.COMMA.name, self.curr_char))
+                tokens.append((Token.COMMA.name, self.curr_char, self.row, self.col))
                 self.get_next_char()
             else:
-                tokens.append((self.curr_char, self.curr_char))
+                tokens.append((self.curr_char, self.curr_char, self.row, self.col))
                 self.get_next_char()
         tokens.append((Token.EOF.name, ""))
         return tokens
