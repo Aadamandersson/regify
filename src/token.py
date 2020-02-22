@@ -3,9 +3,12 @@ import enum
 
 class Token(enum.Enum):
     IDENT   = 0
-    NUM     = 1
-    L_PAREN = 2
-    R_PAREN = 3
-    EOF     = 4
-    STRING  = 5
-    COMMA   = 6
+    REP     = 1
+    NUM     = 2
+    L_PAREN = 3
+    R_PAREN = 4
+    EOF     = 5
+    STRING  = 6
+    COMMA   = 7
+
+

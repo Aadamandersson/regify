@@ -8,16 +8,24 @@ class NVarChar:
         self.end = end
 
     def __str__(self):
-        if self.start in ['*', '+']:
-            return "[{0}]{{,}}".format(self.text)
-        if self.end is None:
-            return "[{0}]{{{1}}}".format(self.text, self.start)
+        if start is '*':
+            return "[{0}]{{0,}}".format(text)
+        elif start is '+':
+            return "[{0}]{{1,}}".format(text)
+        elif start is '?':
+            return "[{0}]{{0,1}}".format(text)
+        if end is None:
+            return "[{0}]{{{1}}}".format(text, start)
         else:
-            return "[{0}]{{{1},{2}}}".format(self.text, self.start, self.end)
+            return "[{0}]{{{1},{2}}}".format(text, start, end)
 
     def __new__(self, text, start, end=None):
-        if start in ['*', '+']:
-            return "[{0}]{{,}}".format(text)
+        if start is '*':
+            return "[{0}]{{0,}}".format(text)
+        elif start is '+':
+            return "[{0}]{{1,}}".format(text)
+        elif start is '?':
+            return "[{0}]{{0,1}}".format(text)
         if end is None:
             return "[{0}]{{{1}}}".format(text, start)
         else:

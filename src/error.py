@@ -11,6 +11,7 @@ Note: Third argument is optional.'\n\n"""
     def __str__(self):
         if self.ident in ["varchar", "VARCHAR"]:
             return self.varchar
+        return ""
 
 class Error:
     def __init__(self, expected, found, ident, row, col, source_code):
@@ -34,14 +35,15 @@ class Error:
                 ret += "{}{}{}\n".format(self.colors[0], content[i], self.colors[2])
             else:
                 ret += content[i] + "\n"
+        
         return ret
 
     def __str__(self):
         se = "{}Syntax Error: {}".format(self.colors[0], self.colors[2])
         return """{}expected {} found {} in {} at line {}, col {}.\n{}{}\n
-        """.format(se, self.expected, self.found, 
-                self.ident, self.row, self.col,
-                self.error_pos(), self.example)
+            """.format(se, self.expected, self.found, 
+                    self.ident, self.row, self.col,
+                    self.error_pos(), self.example)
 
 
 

@@ -22,7 +22,7 @@ class Parser:
     
     def expect(self, tok_typ):
         if self.curr_token[0] is not tok_typ:
-            print(Error(tok_typ, self.curr_token[0], self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code))
+            print(Error(tok_typ, self.curr_token[1], self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code))
             sys.exit(1)
         self.get_next_token()
 
@@ -33,20 +33,21 @@ class Parser:
         return True
 
     def parse_varchar(self):
+        self.curr_ident = "VARCHAR"
         self.get_next_token()
         self.expect(Token.L_PAREN.name)
         arg1 = self.curr_token[1]
         self.expect(Token.STRING.name)
         self.get_next_token()
         arg2 = self.curr_token[1]
-        self.expect(Token.NUM.name)
-        if self.accept(Token.R_PAREN.name):
-            return NVarChar(arg1, arg2)
-        else:
-            self.get_next_token()
-            arg3 = self.curr_token[1]
-            self.expect(Token.NUM.name)
-            return NVarChar(arg1, arg2, arg3)
+        if self.accept(Token.NUM.name) or self.accept(Token.REP.name):
+            if self.accept(Token.R_PAREN.name):
+                return NVarChar(arg1, arg2)
+            else:
+                self.get_next_token()
+                arg3 = self.curr_token[1]
+                self.expect(Token.NUM.name)
+                return NVarChar(arg1, arg2, arg3)
 
     def parse_text(self):
         self.get_next_token()

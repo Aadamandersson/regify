@@ -34,13 +34,9 @@ class Lexer:
 
     def create_new_num(self):
         num = ""
-        if self.curr_char in ['*', '+']:
-            num = self.curr_char
+        while self.curr_char.isdigit():
+            num += self.curr_char
             self.get_next_char()
-        else:
-            while self.curr_char.isdigit():
-                num += self.curr_char
-                self.get_next_char()
         return num
 
     def create_new_ident(self):
@@ -64,8 +60,11 @@ class Lexer:
         while self.curr_char is not '\0':
             if self.curr_char.isalpha():
                 tokens.append((Token.IDENT.name, self.create_new_ident(), self.row, self.col))
-            elif self.curr_char.isdigit() or self.curr_char in ['*', '+']:
+            elif self.curr_char.isdigit():
                 tokens.append((Token.NUM.name, self.create_new_num(), self.row, self.col))
+            elif self.curr_char in ['*', '+', '?']:
+                tokens.append((Token.REP.name, self.curr_char, self.row, self.col))
+                self.get_next_char()
             elif self.curr_char is '(':
                 tokens.append((Token.L_PAREN.name, self.curr_char, self.row, self.col))
                 self.get_next_char()
@@ -82,7 +81,9 @@ class Lexer:
             else:
                 tokens.append((self.curr_char, self.curr_char, self.row, self.col))
                 self.get_next_char()
+
         tokens.append((Token.EOF.name, ""))
+
         return tokens
 
 
