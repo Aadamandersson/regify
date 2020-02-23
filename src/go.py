@@ -19,7 +19,7 @@ if __name__ == '__main__':
     source_code = ""
     with open(sys.argv[1], "r") as f:
         source_code = f.read()
-    print("SOURCE:\n{}".format(source_code))
+    print("SOURCE CODE:\n{}".format(source_code))
     lexer = Lexer(source_code)
     parser = Parser(lexer)
     expr = parser.parse()

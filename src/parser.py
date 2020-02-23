@@ -32,6 +32,11 @@ class Parser:
         self.get_next_token()
         return True
 
+    def peek(self):
+        if self.tok_idx + 1 < len(self.tokens):
+            return self.tokens[self.tok_idx + 1]
+        return self.tokens[self.tok_idx]
+
     def parse_varchar(self):
         self.curr_ident = "VARCHAR"
         self.get_next_token()
@@ -47,7 +52,13 @@ class Parser:
                 self.get_next_token()
                 arg3 = self.curr_token[1]
                 self.expect(Token.NUM.name)
-                return NVarChar(arg1, arg2, arg3)
+                if self.peek()[0] is Token.NUM.name:
+                    e = Error(2, 3, self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code)
+                    e.invalid_nr_of_args()
+                else:
+                    return NVarChar(arg1, arg2, arg3)
+        #Should be num or rep..
+        self.expect(Token.NUM.name)
 
     def parse_text(self):
         self.get_next_token()

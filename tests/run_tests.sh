@@ -18,9 +18,6 @@ cntr=0
 for f in ./tests/negative/*.rms; do
 	echo "===================TEST $cntr==================="
 	./src/go.py $f
-	if [ $? -eq 1 ]; then
-		exit $?
-	fi
 	cntr=$((cntr+1))
 done
 
