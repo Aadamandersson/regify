@@ -13,14 +13,14 @@
     'name': 'comment'
   }
   {
-    'comment': 'Match strings'
-    'begin': '"|\''
-    'end': '([^\\\\])("|\')'
+    'comment': 'Match strings '
+    'begin': '[@]{0,1}(")'
+    'end': '([^\\\\])(")'
     'name': 'string'
   }
   {
-    'comment': 'Keywords'
-    'match': 'varchar|VARCHAR|ANY|any|TEXT|text|REPEAT|repeat'
+    'comment': 'Function names'
+    'match': 'varchar|VARCHAR|ANY|any|REPEAT|repeat'
     'name': 'entity.name.function'
   }
   {

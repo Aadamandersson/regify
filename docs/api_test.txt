@@ -1,0 +1,15 @@
+[TITLE]
+VARCHAR
+[TEXT]
+Write whatever describes VARCHAR
+[CODE]
+Example code of how it can be used
+\\
+
+[TITLE]
+ANY
+[TEXT]
+Write whatever describes ANY
+[CODE]
+Example code of how it can be used
+\\
