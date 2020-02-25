@@ -67,6 +67,10 @@ class Lexer:
         self.get_next_char()
         return str_val
 
+    def skip_single_line_comment(self):
+        while self.curr_char is not '\n':
+            self.get_next_char()
+
     def lex(self):
         tokens = []
         while self.curr_char is not '\0':
@@ -91,6 +95,8 @@ class Lexer:
             elif self.curr_char is ',':
                 tokens.append((Token.COMMA.name, self.curr_char, self.row, self.col))
                 self.get_next_char()
+            elif self.curr_char is '#':
+                self.skip_single_line_comment()
             else:
                 tokens.append((self.curr_char, self.curr_char, self.row, self.col))
                 self.get_next_char()

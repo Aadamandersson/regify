@@ -10,6 +10,9 @@
 		},
 		{
 			"include": "#numbers"
+		},
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {
@@ -29,13 +32,23 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"numbers": {
+			"patterns": [{
+				"name": "constant.numeric.rms",
+				"match": "[0-9]"
+			}]
+		},
+		"comments": {
+			"name": "comment.line.number-sign.rms",
+			"begin": "(\\#)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.comment.rms"
+				}
+			},
+			"end": "($)"
 		}
-	},
-	"numbers": {
-		"patterns": [{
-			"name": "constant.numeric.rms",
-			"match": "[0-9]"
-		}]
 	},
 	"scopeName": "source.rms"
 }

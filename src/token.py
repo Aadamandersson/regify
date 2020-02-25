@@ -10,6 +10,5 @@ class Token(enum.Enum):
     EOF     = 5
     STRING  = 6
     COMMA   = 7
-    AT      = 8
 
 
