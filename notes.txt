@@ -1,0 +1,6 @@
+Special character classes
+\s = [\t\n\r\f]
+\d = [0-9]
+\w = [A-Za-z0-9_]
+.  = Any character except newline
+

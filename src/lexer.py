@@ -52,18 +52,15 @@ class Lexer:
     def create_new_str(self):
         str_val = ""
         self.get_next_char()
-        while self.curr_char is not '\0' and self.curr_char is not '"':
-            str_val += self.curr_char
-            self.get_next_char()
-        self.get_next_char()
-        return str_val
 
-    def create_new_text(self):
-        str_val = ""
-        self.get_next_char()
-        while self.curr_char is not '\0' and self.curr_char is not '"':
+        prev_char = self.curr_char
+
+        while self.curr_char is not '\0' and self.curr_char is not '"' or prev_char is '\\' and self.read_next_char('\\'):
+            
+            prev_char = self.curr_char 
             str_val += self.curr_char
             self.get_next_char()
+ 
         self.get_next_char()
         return str_val
 

@@ -48,9 +48,10 @@ class NText:
         return text
 
 class NRepeat:
-    def __init__(self, num, child):
+    def __init__(self, num, child, child_type=None):
         self.num = num
         self.child = child
+        self.child_type = child_type
 
     def __str__(self):
         ret = ""
@@ -58,10 +59,15 @@ class NRepeat:
             ret += self.child
         return ret
 
-    def __new__(self, num, child):
+    def __new__(self, num, child, child_type=None):
         ret = ""
+
+        delim = ""    
+        print(child_type)
         for _ in range(0, int(num)):
-            ret += child
+            ret += delim + child
+            if child_type is "ANY":
+                delim = "|"
         return ret
 
 class NAny:
