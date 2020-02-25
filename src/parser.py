@@ -59,13 +59,19 @@ class Parser:
                     return NVarChar(arg1, arg2, arg3)
         #Should be num or rep..
         self.expect(Token.NUM.name)
-
+    """
     def parse_text(self):
         self.get_next_token()
         self.expect(Token.L_PAREN.name)
         arg1 = self.curr_token[1]
         self.expect(Token.STRING.name)
         self.expect(Token.R_PAREN.name)
+        return NText(arg1, self.curr_token[1])
+    """
+    def parse_text(self):
+        self.get_next_token()
+        arg1 = self.curr_token[1]
+        self.expect(Token.STRING.name)
         return NText(arg1, self.curr_token[1])
 
     def parse_repeat(self):
@@ -78,8 +84,8 @@ class Parser:
         if self.curr_token[1] in ["varchar", "VARCHAR"]:
             self.curr_ident = "VARCHAR"
             arg2 = self.parse_varchar()
-        elif self.curr_token[1] in ["text", "TEXT"]:
-            self.curr_ident = "TEXT"
+        elif self.curr_token[1] is "@":
+            self.curr_ident = "@"
             arg2 = self.parse_text()
         else:
             # syntax error
@@ -96,8 +102,8 @@ class Parser:
             if self.curr_token[1] in ["varchar", "VARCHAR"]:
                 self.curr_ident = "VARCHAR"
                 children.append(self.parse_varchar())
-            elif self.curr_token[1] in ["text", "TEXT"]:
-                self.curr_ident = "TEXT"
+            elif self.curr_token[1] is "@":
+                self.curr_ident = "@"
                 children.append(self.parse_text())
             elif self.curr_token[1] in ["repeat", "REPEAT"]:
                 self.curr_ident = "REPEAT"
@@ -115,8 +121,8 @@ class Parser:
             if self.curr_token[1] in ["varchar", "VARCHAR"]:
                 self.curr_ident = "VARCHAR"
                 capture.append(self.parse_varchar())
-            elif self.curr_token[1] in ["text", "TEXT"]:
-                self.curr_ident = "TEXT"
+            elif self.curr_token[1] is "@":
+                self.curr_ident = "@"
                 capture.append(self.parse_text())
             elif self.curr_token[1] in ["repeat", "REPEAT"]:
                 self.curr_ident = "REPEAT"
@@ -135,7 +141,7 @@ class Parser:
             if self.curr_token[0] is Token.IDENT.name:
                 if self.curr_token[1] in ["varchar", "VARCHAR"]:
                     expr.append(self.parse_varchar())
-                elif self.curr_token[1] in ["text", "TEXT"]:
+                elif self.curr_token[1] is "@":
                     expr.append(self.parse_text())
                 elif self.curr_token[1] in ["repeat", "REPEAT"]:
                     expr.append(self.parse_repeat())

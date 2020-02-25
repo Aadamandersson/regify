@@ -26,8 +26,12 @@ if __name__ == '__main__':
     pattern = ""
     for e in expr:
         pattern += e
+
     print("RESULT:\n{}".format(pattern))
-    
+
+    #m = re.match(pattern, read_file("datasets/q1data.txt"))
+    #print(m.group(1))
+
     # m = re.findall(pattern, read_file("datasets/q4data.txt"))
     # res = ""
     # for r in m:

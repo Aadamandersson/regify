@@ -41,8 +41,11 @@ class Lexer:
 
     def create_new_ident(self):
         ident = ""
-        while self.curr_char.isalpha():
+        while self.curr_char.isalpha() and self.curr_char is not '@':
             ident += self.curr_char
+            self.get_next_char()
+        if self.curr_char is '@':
+            ident = self.curr_char
             self.get_next_char()
         return ident
 
@@ -55,10 +58,19 @@ class Lexer:
         self.get_next_char()
         return str_val
 
+    def create_new_text(self):
+        str_val = ""
+        self.get_next_char()
+        while self.curr_char is not '\0' and self.curr_char is not '"':
+            str_val += self.curr_char
+            self.get_next_char()
+        self.get_next_char()
+        return str_val
+
     def lex(self):
         tokens = []
         while self.curr_char is not '\0':
-            if self.curr_char.isalpha():
+            if self.curr_char.isalpha() or self.curr_char is '@':
                 tokens.append((Token.IDENT.name, self.create_new_ident(), self.row, self.col))
             elif self.curr_char.isdigit():
                 tokens.append((Token.NUM.name, self.create_new_num(), self.row, self.col))
@@ -68,6 +80,7 @@ class Lexer:
             elif self.curr_char is '(':
                 tokens.append((Token.L_PAREN.name, self.curr_char, self.row, self.col))
                 self.get_next_char()
+
             elif self.curr_char is ')':
                 tokens.append((Token.R_PAREN.name, self.curr_char, self.row, self.col))
                 self.get_next_char()

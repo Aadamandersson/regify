@@ -1,4 +1,4 @@
 any(
-    text("hello"),
-    text("world")
+    @"hello"
+    @"world"
 )
