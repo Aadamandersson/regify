@@ -55,15 +55,16 @@ class NRepeat:
 
     def __str__(self):
         ret = ""
-        for _ in range(0, self.num):
-            ret += self.child
+        delim = ""    
+        for _ in range(0, int(num)):
+            ret += delim + child
+            if child_type is "ANY":
+                delim = "|"
         return ret
 
     def __new__(self, num, child, child_type=None):
         ret = ""
-
         delim = ""    
-        print(child_type)
         for _ in range(0, int(num)):
             ret += delim + child
             if child_type is "ANY":
