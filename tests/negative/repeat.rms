@@ -2,13 +2,14 @@
 REPEAT(5,
     ANY(
         @"cat",
-        @"dog",
-        @"bird",
-        @"fish"
         repeat(
             1,
             @"hello",
             VARCHAR("aad", 1)
+        ),
+        any(
+            @"cat",
+            @"dog
         )
     )
 )

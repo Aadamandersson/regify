@@ -30,26 +30,33 @@ class Error:
         content = self.source_code.splitlines()
         ret = ""
         for i in range(0, len(self.source_code.splitlines())):
-            if i+1 == self.row and self.ident in content[i]:
+            if i+1 == self.row and self.ident.upper() in content[i].upper():
                 ret += "{}{}{}\n".format(self.colors[0], content[i], self.colors[2])
-            elif i+2 == self.row and self.ident in content[i] and self.found in [',', ')']:
+            elif i+2 == self.row and self.ident.upper() in content[i].upper() and self.found in [',', ')']:
                 ret += "{}{}{}\n".format(self.colors[0], content[i], self.colors[2])
             else:
                 ret += content[i] + "\n"
-
         return ret
     
     def invalid_nr_of_args(self):
-        se = "{}Syntax Error: {}".format(self.colors[0], self.colors[2])
+        se = "{}ValueError: {}".format(self.colors[0], self.colors[2])
         ret = """{}Invalid number of arguments. Expected {} or {} in {} at line {}, col {}.\n{}{}\n
             """.format(se, self.expected, self.found, 
                     self.ident, self.row, self.col,
                     self.highlight_error(), self.example)
         print(ret)
         sys.exit(1)
-        
+       
+    def unexpected_argument(self):
+        se = "{}TypeError: {}".format(self.colors[0], self.colors[2])
+        ret = """{}{}() got an unexpected keyword argument '{}' at line {}, col {}.\n{}\n
+            """.format(se, self.ident, self.found, self.row, self.col,
+                    self.highlight_error())
+        print(ret)
+        sys.exit(1)
+
     def __str__(self):
-        se = "{}Syntax Error: {}".format(self.colors[0], self.colors[2])
+        se = "{}SyntaxError: {}".format(self.colors[0], self.colors[2])
         return """{}expected {} found {} in {} at line {}, col {}.\n{}{}\n
             """.format(se, self.expected, self.found, 
                     self.ident, self.row, self.col,

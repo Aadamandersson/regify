@@ -40,31 +40,25 @@ class Parser:
     def parse_args(self, caller):
         children = []
         while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
-            if self.curr_token[1] in ["varchar", "VARCHAR"]:
-                self.curr_ident = "VARCHAR"
+            _type = self.curr_token[1].upper()
+            if _type == "VARCHAR":
+                self.curr_ident = _type
                 children.append(self.parse_varchar())
-            elif self.curr_token[1] is "@":
-                self.curr_ident = "@"
+            elif self.curr_token[1] == "@":
+                self.curr_ident = self.curr_token[1]
                 children.append(self.parse_text())
-            elif self.curr_token[1] in ["repeat", "REPEAT"] and \
-                    self.curr_token[1] not in [caller, caller.lower()]:
-
-                self.curr_ident = "REPEAT"
+            elif _type == "REPEAT" and _type != caller:
+                self.curr_ident = _type
                 children.append(self.parse_repeat())
-            elif self.curr_token[1] in ["any", "ANY"] and \
-                    self.curr_token[1] not in [caller, caller.lower()]:
-                self.curr_ident = "ANY"
+            elif _type == "ANY" and _type != caller:
+                self.curr_ident = _type
                 children.append(self.parse_any())
-            elif self.curr_token[1] in ["group", "GROUP"] and \
-                    self.curr_token[1] not in [caller, caller.lower()]:
-
-                self.curr_ident = "GROUP"
+            elif _type == "GROUP" and _type != caller:
+                self.curr_ident = _type
                 children.append(self.parse_capture_group())
             else:
-                # Unexpected ident, handle this better
-                print("Unexpected ident in arguments {}".format(self.curr_token))
-                sys.exit(1)
-                
+                e = Error("", self.curr_token[1], caller, self.curr_token[2], self.curr_token[3], self.source_code)
+                e.unexpected_argument()
 
         return children
 
@@ -144,15 +138,16 @@ class Parser:
         expr = []
         while self.tok_idx < len(self.tokens):
             if self.curr_token[0] is Token.IDENT.name:
-                if self.curr_token[1] in ["varchar", "VARCHAR"]:
+                _type = self.curr_token[1].upper()
+                if _type == "VARCHAR":
                     expr.append(self.parse_varchar())
-                elif self.curr_token[1] is "@":
+                elif self.curr_token[1] == "@":
                     expr.append(self.parse_text())
-                elif self.curr_token[1] in ["repeat", "REPEAT"]:
+                elif _type == "REPEAT":
                     expr.append(self.parse_repeat())
-                elif self.curr_token[1] in ["any", "ANY"]:
+                elif _type == "ANY":
                     expr.append(self.parse_any())
-                elif self.curr_token[1] in ["group", "GROUP"]:
+                elif _type == "GROUP":
                     expr.append(self.parse_capture_group())
             else:
                 self.get_next_token()
