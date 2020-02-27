@@ -56,19 +56,21 @@ class NRepeat:
     def __str__(self):
         ret = ""
         delim = ""    
-        for _ in range(0, int(num)):
-            ret += delim + child
-            if child_type is "ANY":
-                delim = "|"
+        for i in range(0, int(num)):
+            for j in range(0, len(child)):
+                ret += delim + child[j]
+                if child_type is "ANY":
+                    delim = "|"
         return ret
 
     def __new__(self, num, child, child_type=None):
         ret = ""
         delim = ""    
-        for _ in range(0, int(num)):
-            ret += delim + child
-            if child_type is "ANY":
-                delim = "|"
+        for i in range(0, int(num)):
+            for j in range(0, len(child)):
+                ret += delim + child[j]
+                if child_type is "ANY":
+                    delim = "|"
         return ret
 
 class NAny:
@@ -86,6 +88,7 @@ class NAny:
     def __new__(self, children):
         ret = ""
         delim = ""
+        print(children)
         for i in range(0, len(children)):
             ret += delim + children[i]
             delim = "|"

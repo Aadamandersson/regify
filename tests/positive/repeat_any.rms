@@ -5,5 +5,10 @@ REPEAT(5,
         @"dog",
         @"bird",
         @"fish"
+        REPEAT(
+            1,
+            @"hello",
+            VARCHAR("aad", 1)
+        )
     )
 )

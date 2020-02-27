@@ -80,25 +80,26 @@ class Parser:
         arg1 = self.curr_token[1]
         self.expect(Token.NUM.name)
         self.get_next_token() 
-        arg2 = None
+        children = []
         child_type = ""
-        if self.curr_token[1] in ["varchar", "VARCHAR"]:
-            self.curr_ident = "VARCHAR"
-            child_type = "VARCHAR"
-            arg2 = self.parse_varchar()
-        elif self.curr_token[1] in ["any", "ANY"]:
-            self.curr_ident = "ANY"
-            child_type = "ANY"
-            arg2 = self.parse_any()
-        elif self.curr_token[1] is "@":
-            self.curr_ident = "@"
-            child_type = "@"
-            arg2 = self.parse_text()
-        else:
-            # syntax error
-            arg2 = self.curr_token[1]
-        if (self.accept(Token.R_PAREN.name)):
-            return NRepeat(arg1, arg2, child_type)
+        ret = None
+        while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
+            if self.curr_token[1] in ["varchar", "VARCHAR"]:
+                self.curr_ident = "VARCHAR"
+                child_type = "VARCHAR"
+                children.append(self.parse_varchar())
+            elif self.curr_token[1] in ["any", "ANY"]:
+                self.curr_ident = "ANY"
+                child_type = "ANY"
+                children.append(self.parse_any())
+            elif self.curr_token[1] is "@":
+                self.curr_ident = "@"
+                child_type = "@"
+                children.append(self.parse_text())
+            
+        ret = NRepeat(arg1, children, child_type) 
+        self.expect(Token.R_PAREN.name)
+        return ret
     
     def parse_any(self):
         self.get_next_token()
