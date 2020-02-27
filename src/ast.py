@@ -1,115 +1,90 @@
 #!/usr/bin/env python3
 
 
-class NVarChar:
+class AstVarChar:
     def __init__(self, text, start, end=None):
         self.text = text
         self.start = start
         self.end = end
 
+    def evaluate(self):
+        if self.start is '*':
+            return "[{0}]{{0,}}".format(self.text)
+        elif self.start is '+':
+            return "[{0}]{{1,}}".format(self.text)
+        elif self.start is '?':
+            return "[{0}]{{0,1}}".format(self.text)
+        if self.end is None:
+            return "[{0}]{{{1}}}".format(self.text, self.start)
+        else:
+            return "[{0}]{{{1},{2}}}".format(self.text, self.start, self.end)
+    
     def __str__(self):
-        if start is '*':
-            return "[{0}]{{0,}}".format(text)
-        elif start is '+':
-            return "[{0}]{{1,}}".format(text)
-        elif start is '?':
-            return "[{0}]{{0,1}}".format(text)
-        if end is None:
-            return "[{0}]{{{1}}}".format(text, start)
-        else:
-            return "[{0}]{{{1},{2}}}".format(text, start, end)
-
-    def __new__(self, text, start, end=None):
-        if start is '*':
-            return "[{0}]{{0,}}".format(text)
-        elif start is '+':
-            return "[{0}]{{1,}}".format(text)
-        elif start is '?':
-            return "[{0}]{{0,1}}".format(text)
-        if end is None:
-            return "[{0}]{{{1}}}".format(text, start)
-        else:
-            return "[{0}]{{{1},{2}}}".format(text, start, end)
+        return self.evaluate()
 
 
-class NText:
+
+class AstText:
     def __init__(self, text, next_tok):
         self.text = text
         self.next_tok = next_tok
 
-    def __str__(self):
-        if self.next_tok == "varchar" and self.text == '[':
-            return '\\' + self.text
+    def evaluate(self):
+        if self.next_tok in ["varchar", "VARCHAR"] and self.text == "[":
+            return "\\" + self.text
         return self.text
 
-    def __new__(self, text, next_tok):
-        if next_tok == "varchar" and text == '[':
-            return '\\' + text
-        return text
+    def __str__(self):
+        return self.evaluate()
 
-class NRepeat:
-    def __init__(self, num, child, child_type=None):
+
+class AstRepeat:
+    def __init__(self, num, child):
         self.num = num
         self.child = child
-        self.child_type = child_type
+
+    def evaluate(self):
+        ret = ""
+        delim = ""    
+        for _ in range(0, int(self.num)):
+            for j in range(0, len(self.child)):
+                ret += delim + self.child[j].evaluate()
+                if isinstance(self.child[j], AstAny):
+                    delim = "|"
+        return ret
 
     def __str__(self):
-        ret = ""
-        delim = ""    
-        for i in range(0, int(num)):
-            for j in range(0, len(child)):
-                ret += delim + child[j]
-                if child_type is "ANY":
-                    delim = "|"
-        return ret
+        return self.evaluate()
 
-    def __new__(self, num, child, child_type=None):
-        ret = ""
-        delim = ""    
-        for i in range(0, int(num)):
-            for j in range(0, len(child)):
-                ret += delim + child[j]
-                if child_type is "ANY":
-                    delim = "|"
-        return ret
 
-class NAny:
+class AstAny:
     def __init__(self, children):
         self.children = children
         
-    def __str__(self):
+    def evaluate(self):
         ret = ""
         delim = ""
         for i in range(0, len(self.children)):
-            ret += delim + self.children[i]
+            ret += delim + self.children[i].evaluate()
             delim = "|"
         return ret
 
-    def __new__(self, children):
-        ret = ""
-        delim = ""
-        print(children)
-        for i in range(0, len(children)):
-            ret += delim + children[i]
-            delim = "|"
-        return ret
+    def __str__(self):
+        return self.evaluate()
 
 
-class NCaptureGroup:
+class AstCaptureGroup:
     def __init__(self, capture):
         self.capture = capture
 
-    def __str__(self):
+    def evaluate(self):
         ret = "("
         for i in range(0, len(self.capture)):
-            ret += self.capture[i]
+            ret += self.capture[i].evaluate()
         return ret + ")"
 
-    def __new__(self, capture):
-        ret = "("
-        for i in range(0, len(capture)):
-            ret += capture[i]
-        return ret + ")"
+    def __str__(self):
+        return self.evaluate()
 
 
 

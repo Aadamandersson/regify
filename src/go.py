@@ -25,7 +25,7 @@ if __name__ == '__main__':
     expr = parser.parse()
     pattern = ""
     for e in expr:
-        pattern += e
+        pattern += e.evaluate()
 
     print("RESULT:\n{}".format(pattern))
 

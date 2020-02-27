@@ -3,3 +3,4 @@
 r.txt
 __pycache__
 src/__pycache__/
+.vscode
