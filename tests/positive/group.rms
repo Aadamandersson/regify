@@ -3,6 +3,6 @@ GROUP(
 	ANY(
 		VARCHAR("0-9", 2),	#This is a comment
 		@"text\"",
-		VARCHAR("a-z", 1, 10),
+		varchar("a-z", 1, 10)
 	)
 )

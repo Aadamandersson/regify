@@ -7,6 +7,42 @@ Special character classes
 
 TODO:
 VARCHAR - should be able to handle the case where it resolves down to e.g, {3,}
-REPEAT - multiple args
 GROUP - Repeat x2 doesnt work?
 STRINGS - handle escapes inside str better in lexer
+
+OPTIONAL - ?
+START - ^
+END - $
+EXCEPT("ABC") - [^abc] ??????
+
+REPEAT:
+	* VARCHAR
+	* ANY
+	* @
+	* CAPTURE GROUP
+
+ANY:
+	* VARCHAR
+	* @
+	* REPEAT
+	* CAPTURE GROUP
+
+CAPTUREGROUP:
+	* VARCHAR
+	* @
+	* REPEAT
+	* ANY
+
+
+Used in all:
+	* VARCHAR
+	* @
+
+
+ALL: 
+	* VARCHAR
+	* @
+	* REPEAT
+	* ANY
+	* CAPTURE GROUP
+	* 

@@ -36,6 +36,37 @@ class Parser:
         if self.tok_idx + 1 < len(self.tokens):
             return self.tokens[self.tok_idx + 1]
         return self.tokens[self.tok_idx]
+    
+    def parse_args(self, caller):
+        children = []
+        while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
+            if self.curr_token[1] in ["varchar", "VARCHAR"]:
+                self.curr_ident = "VARCHAR"
+                children.append(self.parse_varchar())
+            elif self.curr_token[1] is "@":
+                self.curr_ident = "@"
+                children.append(self.parse_text())
+            elif self.curr_token[1] in ["repeat", "REPEAT"] and \
+                    self.curr_token[1] not in [caller, caller.lower()]:
+
+                self.curr_ident = "REPEAT"
+                children.append(self.parse_repeat())
+            elif self.curr_token[1] in ["any", "ANY"] and \
+                    self.curr_token[1] not in [caller, caller.lower()]:
+                self.curr_ident = "ANY"
+                children.append(self.parse_any())
+            elif self.curr_token[1] in ["group", "GROUP"] and \
+                    self.curr_token[1] not in [caller, caller.lower()]:
+
+                self.curr_ident = "GROUP"
+                children.append(self.parse_capture_group())
+            else:
+                # Unexpected ident, handle this better
+                print("Unexpected ident in arguments {}".format(self.curr_token))
+                sys.exit(1)
+                
+
+        return children
 
     def parse_varchar(self):
         self.curr_ident = "VARCHAR"
@@ -62,6 +93,7 @@ class Parser:
         self.expect(Token.NUM.name)
 
     """
+    Old v
     def parse_text(self):
         self.get_next_token()
         self.expect(Token.L_PAREN.name)
@@ -70,6 +102,7 @@ class Parser:
         self.expect(Token.R_PAREN.name)
         return AstText(arg1, self.curr_token[1])
     """
+
     def parse_text(self):
         self.get_next_token()
         arg1 = self.curr_token[1]
@@ -82,19 +115,8 @@ class Parser:
         arg1 = self.curr_token[1]
         self.expect(Token.NUM.name)
         self.get_next_token() 
-        children = []
-        ret = None
-        while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
-            if self.curr_token[1] in ["varchar", "VARCHAR"]:
-                self.curr_ident = "VARCHAR"
-                children.append(self.parse_varchar())
-            elif self.curr_token[1] in ["any", "ANY"]:
-                self.curr_ident = "ANY"
-                children.append(self.parse_any())
-            elif self.curr_token[1] is "@":
-                self.curr_ident = "@"
-                children.append(self.parse_text())
-            
+
+        children = self.parse_args("REPEAT") 
         ret = AstRepeat(arg1, children) 
         self.expect(Token.R_PAREN.name)
         return ret
@@ -102,19 +124,8 @@ class Parser:
     def parse_any(self):
         self.get_next_token()
         self.expect(Token.L_PAREN.name)
-        children = []
-        ret = None
-        while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
-            if self.curr_token[1] in ["varchar", "VARCHAR"]:
-                self.curr_ident = "VARCHAR"
-                children.append(self.parse_varchar())
-            elif self.curr_token[1] is "@":
-                self.curr_ident = "@"
-                children.append(self.parse_text())
-            elif self.curr_token[1] in ["repeat", "REPEAT"]:
-                self.curr_ident = "REPEAT"
-                children.append(self.parse_repeat())
 
+        children = self.parse_args("ANY") 
         ret = AstAny(children)
         self.expect(Token.R_PAREN.name)
         return ret
@@ -122,23 +133,9 @@ class Parser:
     def parse_capture_group(self):
         self.get_next_token()
         self.expect(Token.L_PAREN.name)
-        capture = []
-        ret = None
-        while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
-            if self.curr_token[1] in ["varchar", "VARCHAR"]:
-                self.curr_ident = "VARCHAR"
-                capture.append(self.parse_varchar())
-            elif self.curr_token[1] is "@":
-                self.curr_ident = "@"
-                capture.append(self.parse_text())
-            elif self.curr_token[1] in ["repeat", "REPEAT"]:
-                self.curr_ident = "REPEAT"
-                capture.append(self.parse_repeat())
-            elif self.curr_token[1] in ["any", "ANY"]:
-                self.curr_ident = "ANY"
-                capture.append(self.parse_any())
 
-        ret = AstCaptureGroup(capture)
+        children = self.parse_args("GROUP")
+        ret = AstCaptureGroup(children)
         self.expect(Token.R_PAREN.name)
         return ret
 
@@ -160,5 +157,7 @@ class Parser:
             else:
                 self.get_next_token()
         return expr
+
+
 
 
