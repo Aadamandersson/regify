@@ -25,14 +25,29 @@ class AstVarChar:
 
 
 class AstText:
-    def __init__(self, text, next_tok):
+    def __init__(self, text, prev_tok, next_tok):
         self.text = text
+        self.prev_tok = prev_tok
         self.next_tok = next_tok
+        self.escaped_chars = [
+            '[', ']', '{', '}', '(', ')',
+            '.', '|', '?', '*', '+'
+        ]
 
     def evaluate(self):
         if self.next_tok in ["varchar", "VARCHAR"] and self.text == "[":
             return "\\" + self.text
-        return self.text
+        elif self.prev_tok == "INLINE":
+            return self.text
+        
+        # Else, escape the special characters
+        ret = ""
+        for c in self.text:
+            if c in self.escaped_chars:
+                ret += '\\'
+            ret += c
+            
+        return ret
 
     def __str__(self):
         return self.evaluate()
@@ -85,6 +100,21 @@ class AstCaptureGroup:
 
     def __str__(self):
         return self.evaluate()
+
+
+class AstKeyword:
+    def __init__(self, _type):
+        self._type = _type
+
+    def evaluate(self):
+        if self._type == "INLINE":
+            return ""
+
+
+
+
+
+
 
 
 

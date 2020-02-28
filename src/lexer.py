@@ -10,6 +10,9 @@ class Lexer:
         self.char_idx = -1
         self.col = 0
         self.row = 1
+        self.keywords = [
+            "INLINE" 
+        ]
 
     def next_pos(self):
         self.char_idx += 1
@@ -47,6 +50,7 @@ class Lexer:
         if self.curr_char is '@':
             ident = self.curr_char
             self.get_next_char()
+
         return ident
 
     def create_new_str(self):
@@ -72,7 +76,12 @@ class Lexer:
         tokens = []
         while self.curr_char is not '\0':
             if self.curr_char.isalpha() or self.curr_char is '@':
-                tokens.append((Token.IDENT.name, self.create_new_ident(), self.row, self.col))
+                _id = self.create_new_ident() 
+                if _id.upper() in self.keywords:
+                    tokens.append((Token.KEYWORD.name, _id, self.row, self.col))
+                else:
+                    tokens.append((Token.IDENT.name, _id, self.row, self.col))
+                    #tokens.append((Token.IDENT.name, self.create_new_ident(), self.row, self.col))
             elif self.curr_char.isdigit():
                 tokens.append((Token.NUM.name, self.create_new_num(), self.row, self.col))
             elif self.curr_char in ['*', '+', '?']:

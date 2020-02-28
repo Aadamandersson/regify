@@ -48,6 +48,7 @@ class Error:
         sys.exit(1)
        
     def unexpected_argument(self):
+        # example?
         se = "{}TypeError: {}".format(self.colors[0], self.colors[2])
         ret = """{}{}() got an unexpected keyword argument '{}' at line {}, col {}.\n{}\n
             """.format(se, self.ident, self.found, self.row, self.col,

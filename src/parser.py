@@ -9,6 +9,7 @@ class Parser:
         self.tokens = lexer.lex()
         self.source_code = lexer.source_code
         self.curr_token = 0
+        self.prev_token = self.curr_token
         self.tok_idx = -1
         self.get_next_token() 
         self.curr_ident = ""
@@ -98,10 +99,14 @@ class Parser:
     """
 
     def parse_text(self):
+        prev_tok = ""
+
+        if isinstance(self.prev_token, str):
+            prev_tok = self.prev_token[1]
         self.get_next_token()
         arg1 = self.curr_token[1]
         self.expect(Token.STRING.name)
-        return AstText(arg1, self.curr_token[1])
+        return AstText(arg1, prev_tok, self.curr_token[1])
 
     def parse_repeat(self):
         self.get_next_token() 
@@ -133,11 +138,16 @@ class Parser:
         self.expect(Token.R_PAREN.name)
         return ret
 
+    def parse_keyword(self, _type):
+        ret = AstKeyword(_type)
+        self.expect(Token.KEYWORD.name)
+        return ret
+
 
     def parse(self):
         expr = []
         while self.tok_idx < len(self.tokens):
-            if self.curr_token[0] is Token.IDENT.name:
+            if self.curr_token[0] == Token.IDENT.name:
                 _type = self.curr_token[1].upper()
                 if _type == "VARCHAR":
                     expr.append(self.parse_varchar())
@@ -149,6 +159,9 @@ class Parser:
                     expr.append(self.parse_any())
                 elif _type == "GROUP":
                     expr.append(self.parse_capture_group())
+            elif self.curr_token[0] == Token.KEYWORD.name:
+                _type = self.curr_token[1].upper()
+                expr.append(self.parse_keyword(_type))
             else:
                 self.get_next_token()
         return expr

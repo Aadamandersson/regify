@@ -3,6 +3,9 @@
 	"name": "Rms",
 	"patterns": [
 		{
+			"include": "#functions"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -16,10 +19,16 @@
 		}
 	],
 	"repository": {
+		"functions": {
+			"patterns": [{
+				"name": "entity.name.function.rms",
+				"match": "\\b(ANY|any|TEXT|text|VARCHAR|varchar|repeat|REPEAT|GROUP|group)\\b"
+			}]
+		},
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.rms",
-				"match": "\\b(ANY|any|TEXT|text|VARCHAR|varchar|repeat|REPEAT|GROUP|group)\\b"
+				"match": "\\b(INLINE|inline)\\b"
 			}]
 		},
 		"strings": {
