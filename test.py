@@ -53,16 +53,15 @@ if __name__ == '__main__':
     else:
         print("Failed: \n{}\n".format(out))
     #passed, out = make_test(6, '[-|>|<]{12}')
-    
-    #if passed is True:
-        #print("Passed")
-    #else:
-        #print("Failed: \n{}\n".format(out))
-    
-    #passed, out = make_test_grp(10, r'(([\.,][:;]{2,3}){2})|(\[[/\\][A-Z][a-z]{,}])')
-    
+
     #if passed is True:
         #print("Passed")
     #else:
         #print("Failed: \n{}\n".format(out))
 
+    #passed, out = make_test_grp(10, r'(([\.,][:;]{2,3}){2})|(\[[/\\][A-Z][a-z]{,}])')
+
+    #if passed is True:
+        #print("Passed")
+    #else:
+        #print("Failed: \n{}\n".format(out))

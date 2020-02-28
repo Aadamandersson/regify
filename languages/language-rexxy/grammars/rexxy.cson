@@ -20,12 +20,17 @@
   }
   {
     'comment': 'Function names'
-    'match': 'varchar|VARCHAR|ANY|any|REPEAT|repeat'
+    'match': 'GROUP|group|varchar|VARCHAR|ANY|any|REPEAT|repeat'
     'name': 'entity.name.function'
   }
   {
+    'comment': 'Function names'
+    'match': 'OPTIONAL|optional|OR|or'
+    'name': 'entity.name.keyword'
+  }
+  {
     'comment': 'Define all constants'
-    'match': '[0-9]|\\*|\\+'
+    'match': '[0-9]|\\*|\\+|\\?'
     'name': 'constant'
   }
 

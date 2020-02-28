@@ -6,4 +6,3 @@ GROUP(
 		VARCHAR("a-z")
 	)
 )
-
