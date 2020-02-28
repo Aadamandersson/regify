@@ -25,7 +25,7 @@
   }
   {
     'comment': 'Function names'
-    'match': 'OPTIONAL|optional|OR|or'
+    'match': 'OPTIONAL|optional|OR|or|MORE|START|END|INLINE'
     'name': 'entity.name.keyword'
   }
   {
