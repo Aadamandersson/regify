@@ -11,7 +11,11 @@ class Lexer:
         self.col = 0
         self.row = 1
         self.keywords = [
-            "INLINE" 
+            "INLINE",
+            "OR",
+            "MORE",
+            "START",
+            "END"
         ]
 
     def next_pos(self):

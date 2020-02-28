@@ -1,1 +1,1 @@
-ANY(@"\[Edna->]", @"\[Phil->]", @"\[Tom->]", @"\[George->]", @"\[Harry->]")
+ANY(@"[Edna->]", @"[Phil->]", @"[Tom->]", @"[George->]", @"[Harry->]")

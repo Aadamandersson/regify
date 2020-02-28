@@ -8,7 +8,7 @@ class AstVarChar:
         self.end = end
 
     def evaluate(self):
-        if self.start is '*':
+        if self.start is "*":
             return "[{0}]{{0,}}".format(self.text)
         elif self.start is '+':
             return "[{0}]{{1,}}".format(self.text)
@@ -31,7 +31,7 @@ class AstText:
         self.next_tok = next_tok
         self.escaped_chars = [
             '[', ']', '{', '}', '(', ')',
-            '.', '|', '?', '*', '+'
+            '.', '|', '?', '*', '+', '\\', '/'
         ]
 
     def evaluate(self):
@@ -88,12 +88,12 @@ class AstAny:
         return self.evaluate()
 
 
-class AstCaptureGroup:
+class AstNonCaptureGroup:
     def __init__(self, capture):
         self.capture = capture
 
     def evaluate(self):
-        ret = "("
+        ret = "(?:"
         for i in range(0, len(self.capture)):
             ret += self.capture[i].evaluate()
         return ret + ")"
@@ -109,6 +109,15 @@ class AstKeyword:
     def evaluate(self):
         if self._type == "INLINE":
             return ""
+        elif self._type == "MORE":
+            return ""
+        elif self._type == "OR":
+            return "|"
+        elif self._type == "START":
+            return "^"
+        elif self._type == "END":
+            return "$"
+        return ""
 
 
 

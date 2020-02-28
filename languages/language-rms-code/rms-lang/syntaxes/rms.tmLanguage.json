@@ -28,7 +28,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.rms",
-				"match": "\\b(INLINE|inline)\\b"
+				"match": "\\b(INLINE|inline|OR|or|MORE|START|END)\\b"
 			}]
 		},
 		"strings": {

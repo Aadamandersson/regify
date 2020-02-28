@@ -9,7 +9,7 @@ REPEAT(5,
         ),
         any(
             @"cat",
-            @"dog
+            @"dog"
         )
     )
 )

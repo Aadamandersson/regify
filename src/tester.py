@@ -1,12 +1,13 @@
+#!/usr/bin/env python3
 import os
 import sys
 import difflib
 import reazy
 import re
 
-EXECUTABLE='src/go.py'
-TEST_FOLDER='../tests/generator'
-DATASET_FOLDER='../datasets/'
+EXECUTABLE='./src/go.py'
+TEST_FOLDER='./tests/generator'
+DATASET_FOLDER='./datasets/'
 NUM_OF_TESTS=9
 VERBOSE=True
 
@@ -32,10 +33,10 @@ def run_test(num):
         print("[INFO] Generated pattern:\n{}".format(pattern))
 
     m = re.findall(pattern, current_dataset)
+
     res = ""
     for r in m:
         res += r + '\n'
-
     diff = difflib.unified_diff([current_target], [res])
     diff2 = difflib.unified_diff([current_target], [res])
     if '\n'.join(diff) is not '':

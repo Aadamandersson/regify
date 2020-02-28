@@ -1,4 +1,10 @@
 ANY(
-    VARCHAR(")(\\/.,", 4),
-    VARCHAR("-><+", 6)
+    GROUP(
+        @"(",
+        VARCHAR("/\\.,", 2),
+        @")"
+    ),
+    GROUP(
+        VARCHAR("-><+", 6)
+    )
 )

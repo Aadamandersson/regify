@@ -37,6 +37,10 @@ class Parser:
         if self.tok_idx + 1 < len(self.tokens):
             return self.tokens[self.tok_idx + 1]
         return self.tokens[self.tok_idx]
+
+    def peek_nth(self, n):
+        if self.tok_idx + n < len(self.tokens):
+            return self.tokens[self.tok_idx + n]
     
     def parse_args(self, caller):
         children = []
@@ -77,12 +81,17 @@ class Parser:
             else:
                 self.get_next_token()
                 arg3 = self.curr_token[1]
-                self.expect(Token.NUM.name)
-                if self.peek()[0] is Token.NUM.name:
-                    e = Error(2, 3, self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code)
-                    e.invalid_nr_of_args()
+                if arg3 == "MORE":
+                    return AstVarChar(arg1, arg2, "")
+                elif self.accept(Token.NUM.name):
+                    if self.peek()[0] is Token.NUM.name:
+                        e = Error(2, 3, self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code)
+                        e.invalid_nr_of_args()
+                    else:
+                        return AstVarChar(arg1, arg2, arg3)
                 else:
-                    return AstVarChar(arg1, arg2, arg3)
+                    e = Error("", self.curr_token[1], arg3, self.curr_token[2], self.curr_token[3], self.source_code)
+                    e.unexpected_argument()
 
         #Should be num or rep..
         self.expect(Token.NUM.name)
@@ -134,7 +143,7 @@ class Parser:
         self.expect(Token.L_PAREN.name)
 
         children = self.parse_args("GROUP")
-        ret = AstCaptureGroup(children)
+        ret = AstNonCaptureGroup(children)
         self.expect(Token.R_PAREN.name)
         return ret
 
