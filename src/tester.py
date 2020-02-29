@@ -8,7 +8,7 @@ import re
 EXECUTABLE='./src/go.py'
 TEST_FOLDER='./tests/generator'
 DATASET_FOLDER='./datasets/'
-NUM_OF_TESTS=9
+NUM_OF_TESTS=10
 VERBOSE=True
 
 def read_file(fn):
@@ -54,6 +54,8 @@ def run_test(num):
         print("[INFO] HEAD of {}:  \n{}".format(hits_path, head_of_file(hits_path, 5)))
 
         print("[INFO] Test path: {}".format(current_test))
+        print("[INFO] Source code:\n{}".format(read_file(current_test)))
+
         print("[INFO] Generated pattern:\n{}".format(pattern))
 
 

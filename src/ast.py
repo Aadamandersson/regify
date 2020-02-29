@@ -18,7 +18,7 @@ class AstVarChar:
             return "[{0}]{{{1}}}".format(self.text, self.start)
         else:
             return "[{0}]{{{1},{2}}}".format(self.text, self.start, self.end)
-    
+
     def __str__(self):
         return self.evaluate()
 
@@ -39,14 +39,14 @@ class AstText:
             return "\\" + self.text
         elif self.prev_tok == "INLINE":
             return self.text
-        
+
         # Else, escape the special characters
         ret = ""
         for c in self.text:
             if c in self.escaped_chars:
                 ret += '\\'
             ret += c
-            
+
         return ret
 
     def __str__(self):
@@ -59,14 +59,14 @@ class AstRepeat:
         self.child = child
 
     def evaluate(self):
-        ret = ""
-        delim = ""    
+        ret = "(?:"
+        delim = ""
         for _ in range(0, int(self.num)):
             for j in range(0, len(self.child)):
                 ret += delim + self.child[j].evaluate()
                 if isinstance(self.child[j], AstAny):
                     delim = "|"
-        return ret
+        return ret + ")"
 
     def __str__(self):
         return self.evaluate()
@@ -75,14 +75,15 @@ class AstRepeat:
 class AstAny:
     def __init__(self, children):
         self.children = children
-        
+
     def evaluate(self):
-        ret = ""
-        delim = ""
+        ret = "(?:"
+        delim = "|"
         for i in range(0, len(self.children)):
-            ret += delim + self.children[i].evaluate()
-            delim = "|"
-        return ret
+            ret += self.children[i].evaluate()
+            if i < len(self.children)-1:
+                ret += delim
+        return ret + ")"
 
     def __str__(self):
         return self.evaluate()
@@ -118,12 +119,3 @@ class AstKeyword:
         elif self._type == "END":
             return "$"
         return ""
-
-
-
-
-
-
-
-
-

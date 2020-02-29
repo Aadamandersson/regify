@@ -1,1 +1,11 @@
-ANY(@"[Edna->]", @"[Phil->]", @"[Tom->]", @"[George->]", @"[Harry->]")
+@"["
+GROUP(
+    ANY(
+        @"Edna",
+        @"Phil",
+        @"Tom",
+        @"George",
+        @"Harry"
+    )
+)
+@"->]"
