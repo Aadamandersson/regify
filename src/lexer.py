@@ -85,7 +85,6 @@ class Lexer:
                     tokens.append((Token.KEYWORD.name, _id, self.row, self.col))
                 else:
                     tokens.append((Token.IDENT.name, _id, self.row, self.col))
-                    #tokens.append((Token.IDENT.name, self.create_new_ident(), self.row, self.col))
             elif self.curr_char.isdigit():
                 tokens.append((Token.NUM.name, self.create_new_num(), self.row, self.col))
             elif self.curr_char in ['*', '+', '?']:

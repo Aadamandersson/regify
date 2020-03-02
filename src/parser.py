@@ -61,6 +61,9 @@ class Parser:
             elif _type == "GROUP" and _type != caller:
                 self.curr_ident = _type
                 children.append(self.parse_capture_group())
+            elif _type == "INLINE" and _type != caller:
+                self.curr_ident = _type
+                children.append(self.parse_text())
             else:
                 e = Error("", self.curr_token[1], caller, self.curr_token[2], self.curr_token[3], self.source_code)
                 e.unexpected_argument()
@@ -82,12 +85,15 @@ class Parser:
                 self.get_next_token()
                 arg3 = self.curr_token[1]
                 if arg3 == "MORE":
+                    self.get_next_token()
+                    self.expect(Token.R_PAREN.name)
                     return AstVarChar(arg1, arg2, "")
                 elif self.accept(Token.NUM.name):
                     if self.peek()[0] is Token.NUM.name:
                         e = Error(2, 3, self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code)
                         e.invalid_nr_of_args()
                     else:
+                        self.expect(Token.R_PAREN.name)
                         return AstVarChar(arg1, arg2, arg3)
                 else:
                     e = Error("", self.curr_token[1], arg3, self.curr_token[2], self.curr_token[3], self.source_code)
@@ -109,9 +115,10 @@ class Parser:
 
     def parse_text(self):
         prev_tok = ""
+        if self.curr_ident == "INLINE":
+            prev_tok = self.curr_ident
+            self.get_next_token()
 
-        if isinstance(self.prev_token, str):
-            prev_tok = self.prev_token[1]
         self.get_next_token()
         arg1 = self.curr_token[1]
         self.expect(Token.STRING.name)
@@ -155,7 +162,8 @@ class Parser:
 
     def parse(self):
         expr = []
-        while self.tok_idx < len(self.tokens):
+
+        while self.curr_token[0] != Token.EOF.name:
             if self.curr_token[0] == Token.IDENT.name:
                 _type = self.curr_token[1].upper()
                 if _type == "VARCHAR":
@@ -168,11 +176,16 @@ class Parser:
                     expr.append(self.parse_any())
                 elif _type == "GROUP":
                     expr.append(self.parse_capture_group())
+                else:
+                    e = Error("", self.curr_token[1], self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code)
+                    e.unexpected_identifier()
             elif self.curr_token[0] == Token.KEYWORD.name:
                 _type = self.curr_token[1].upper()
                 expr.append(self.parse_keyword(_type))
             else:
-                self.get_next_token()
+                e = Error("", self.curr_token[1], self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code)
+                e.unexpected_identifier()
+
         return expr
 
 

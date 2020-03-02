@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys
+import difflib
 
 # TODO: Create examples for all of the types
 class Example:
@@ -25,6 +26,10 @@ class Error:
         # red, green, end
         self.colors = ['\033[91m', '\033[92m', '\033[0m']
         self.example = Example(ident)
+        self.identifiers = [
+            "VARCHAR", "REPEAT",
+            "ANY", "GROUP"
+        ]
           
     def highlight_error(self):
         content = self.source_code.splitlines()
@@ -36,6 +41,7 @@ class Error:
                 ret += "{}{}{}\n".format(self.colors[0], content[i], self.colors[2])
             else:
                 ret += content[i] + "\n"
+
         return ret
     
     def invalid_nr_of_args(self):
@@ -53,6 +59,20 @@ class Error:
         ret = """{}{} got an unexpected keyword argument '{}' at line {}, col {}.\n{}\n
             """.format(se, self.ident, self.found, self.row, self.col,
                     self.highlight_error())
+        print(ret)
+        sys.exit(1)
+    
+    def unexpected_identifier(self):
+        se = "{}SyntaxError: {}".format(self.colors[0], self.colors[2])
+        prop = difflib.get_close_matches(self.found, self.identifiers)
+        full_prop = ""
+        if prop:
+            full_prop = "Did you mean {}?\n".format(prop[0])
+
+        ret = """{}unexpected identifier {} at line {}, col {}.\n{}\n{}{}\n
+            """.format(se, self.found, 
+                    self.row, self.col, full_prop,
+                    self.highlight_error(), self.example)
         print(ret)
         sys.exit(1)
 
