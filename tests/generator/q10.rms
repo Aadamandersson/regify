@@ -12,7 +12,7 @@ REPEAT(2,
 OR                              # BUG? kommatecken behövs inte
 GROUP(
     @"[",
-    VARCHAR("\\/", 1),       # BUG! VARCHAR måste escapa alla specialtecken
+    VARCHAR("/", 1),       # BUG! VARCHAR måste escapa alla specialtecken
     ANY(                    # Starts with comma or dot
         @"Edna",
         @"George",

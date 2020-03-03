@@ -45,7 +45,7 @@
 		"numbers": {
 			"patterns": [{
 				"name": "constant.numeric.rms",
-				"match": "[0-9]"
+				"match": "[0-9]|[\\\\*]|[\\\\+]|[\\\\?]"
 			}]
 		},
 		"comments": {

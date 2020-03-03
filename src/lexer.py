@@ -61,14 +61,21 @@ class Lexer:
         str_val = ""
         self.get_next_char()
 
-        prev_char = self.curr_char
+        while self.curr_char is not '\0':
 
-        while self.curr_char is not '\0' and self.curr_char is not '"' or prev_char is '\\' and self.read_next_char('\\'):
-            
-            prev_char = self.curr_char 
-            str_val += self.curr_char
-            self.get_next_char()
- 
+            if self.curr_char is '\\' and self.read_next_char('"'):
+                self.get_next_char()
+                str_val += self.curr_char
+
+                self.get_next_char()
+                return str_val
+            elif self.curr_char is '"':
+                self.get_next_char()
+                return str_val
+            else:
+                str_val += self.curr_char
+                self.get_next_char()
+
         self.get_next_char()
         return str_val
 
