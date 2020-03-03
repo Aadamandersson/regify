@@ -80,7 +80,7 @@ class Lexer:
         return str_val
 
     def skip_single_line_comment(self):
-        while self.curr_char is not '\n':
+        while self.curr_char is not '\n' and self.curr_char is not '\0':
             self.get_next_char()
 
     def lex(self):

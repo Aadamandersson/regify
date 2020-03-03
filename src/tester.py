@@ -6,10 +6,17 @@ import reazy
 import re
 
 EXECUTABLE='./src/go.py'
-TEST_FOLDER='./tests/generator'
+TEST_FOLDER='./tests/generator/'
 DATASET_FOLDER='./datasets/'
+START_TEST_NR=0
 NUM_OF_TESTS=10
+NEXT_LEVEL=False
 VERBOSE=True
+if NEXT_LEVEL:
+    START_TEST_NR=10
+    NUM_OF_TESTS+=1
+    TEST_FOLDER+="next_level"
+    DATASET_FOLDER+="next_level"
 
 def read_file(fn):
     src = ""
@@ -82,9 +89,10 @@ def run_test(num):
     print('=================================')
     return success
 
-for x in range(NUM_OF_TESTS):
+for x in range(START_TEST_NR, NUM_OF_TESTS):
     passed = run_test(x+1)
     if not passed:
         print ('Testcase {} failed!'.format(x+1))
         break
     print('\n')
+

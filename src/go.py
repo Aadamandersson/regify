@@ -29,21 +29,6 @@ if __name__ == '__main__':
 
     print("RESULT:\n{}".format(pattern))
 
-    #m = re.match(pattern, read_file("datasets/q1data.txt"))
-    #print(m.group(1))
-
-    # m = re.findall(pattern, read_file("datasets/q4data.txt"))
-    # res = ""
-    # for r in m:
-    #     res += r + '\n'
-
-    # d = difflib.Differ()
-    # diff = difflib.unified_diff([read_file("datasets/q4hits.txt")], [res], lineterm='')
-    # if '\n'.join(diff) is not '':
-    #     print("MATCH FAILED:\n\n{}".format('\n'.join(diff)))
-    # else:
-    #     print("SUCCESSFULLY MATCHED")
-
 
 
 

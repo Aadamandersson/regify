@@ -64,6 +64,9 @@ class Parser:
             elif _type == "INLINE" and _type != caller:
                 self.curr_ident = _type
                 children.append(self.parse_text())
+            elif _type in ["OR", "START", "END"]:
+                self.curr_ident = _type
+                children.append(self.parse_keyword(_type))
             else:
                 e = Error("", self.curr_token[1], caller, self.curr_token[2], self.curr_token[3], self.source_code)
                 e.unexpected_argument()

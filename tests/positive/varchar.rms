@@ -4,3 +4,4 @@ VARCHAR("0-9", *)
 VARCHAR("A-Z", +)
 VARCHAR("var", ?)
 
+#comment on last line
