@@ -1,0 +1,4 @@
+ANY(
+    INLINE @"hello",
+    @"THERE"
+)

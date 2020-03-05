@@ -44,7 +44,7 @@ class Parser:
 
     def parse_args(self, caller):
         children = []
-        while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
+        while self.accept(Token.COMMA.name) or self.curr_token[0] in [Token.IDENT.name, Token.KEYWORD.name]:
             _type = self.curr_token[1]
             if _type == "VARCHAR":
                 self.curr_ident = _type
