@@ -11,8 +11,8 @@ class Parser:
         self.curr_token = 0
         self.prev_token = self.curr_token
         self.tok_idx = -1
-        self.get_next_token() 
         self.curr_ident = ""
+        self.get_next_token() 
    
     def get_next_token(self):
         self.prev_token = self.curr_token
@@ -117,15 +117,16 @@ class Parser:
     """
 
     def parse_text(self):
-        prev_tok = ""
-        if self.curr_ident == "INLINE":
-            prev_tok = self.curr_ident
-            self.get_next_token()
-
+        prev_ident = ""
+        try:
+            prev_ident = self.prev_token[1]
+        except:
+            pass
+        
         self.get_next_token()
         arg1 = self.curr_token[1]
         self.expect(Token.STRING.name)
-        return AstText(arg1, prev_tok, self.curr_token[1])
+        return AstText(arg1, prev_ident, self.curr_token[1])
 
     def parse_repeat(self):
         self.get_next_token() 
@@ -171,7 +172,7 @@ class Parser:
                 _type = self.curr_token[1]
                 if _type == "VARCHAR":
                     expr.append(self.parse_varchar())
-                elif self.curr_token[1] == "@":
+                elif _type == "@":
                     expr.append(self.parse_text())
                 elif _type == "REPEAT":
                     expr.append(self.parse_repeat())
@@ -184,6 +185,7 @@ class Parser:
                     e.unexpected_identifier()
             elif self.curr_token[0] == Token.KEYWORD.name:
                 _type = self.curr_token[1]
+                self.curr_ident = _type
                 expr.append(self.parse_keyword(_type))
             else:
                 e = Error("", self.curr_token[1], self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code)

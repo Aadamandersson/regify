@@ -36,6 +36,7 @@ class AstText:
         ]
 
     def evaluate(self):
+        print("t: {}".format(self.prev_tok))
         if self.next_tok == "VARCHAR" and self.text == "[":
             return "\\" + self.text
         elif self.prev_tok == "INLINE":
