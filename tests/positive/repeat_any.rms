@@ -5,7 +5,7 @@ REPEAT(5,
         @"dog",
         @"bird",
         @"fish"
-        repeat(
+        REPEAT(
             1,
             @"hello",
             VARCHAR("aad", 1)

@@ -2,12 +2,12 @@
 REPEAT(5,
     ANY(
         @"cat",
-        repeat(
+        REPEAT(
             1,
             @"hello",
             VARCHAR("aad", 1)
         ),
-        any(
+        ANY(
             @"cat",
             @"dog"
         )

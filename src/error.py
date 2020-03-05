@@ -11,7 +11,7 @@ class Example:
 Note: Third argument is optional.'\n\n"""
 
     def __str__(self):
-        if self.ident in ["varchar", "VARCHAR"]:
+        if self.ident == "VARCHAR":
             return self.varchar
         return ""
 
@@ -35,9 +35,9 @@ class Error:
         content = self.source_code.splitlines()
         ret = ""
         for i in range(0, len(self.source_code.splitlines())):
-            if i+1 == self.row and self.ident.upper() in content[i].upper():
+            if i+1 == self.row and self.ident in content[i]:
                 ret += "{}{}{}\n".format(self.colors[0], content[i], self.colors[2])
-            elif i+2 == self.row and self.ident.upper() in content[i].upper() and self.found in [',', ')']:
+            elif i+2 == self.row and self.ident in content[i] and self.found in [',', ')']:
                 ret += "{}{}{}\n".format(self.colors[0], content[i], self.colors[2])
             else:
                 ret += content[i] + "\n"
@@ -64,7 +64,7 @@ class Error:
     
     def unexpected_identifier(self):
         se = "{}SyntaxError: {}".format(self.colors[0], self.colors[2])
-        prop = difflib.get_close_matches(self.found, self.identifiers)
+        prop = difflib.get_close_matches(self.found.upper(), self.identifiers)
         full_prop = ""
         if prop:
             full_prop = "Did you mean {}?\n".format(prop[0])

@@ -1,7 +1,7 @@
 ANY(
     GROUP(
         @"(",
-        VARCHAR("/.,", 2),
+        VARCHAR("\/.,", 2),
         @")"
     ),
     GROUP(

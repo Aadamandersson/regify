@@ -10,7 +10,7 @@ ANY(                           # BUG! Any sätter inte in "|" emellan REPEAT o G
     ),
     GROUP(
         @"[",
-        VARCHAR("/", 1),       # BUG! VARCHAR måste escapa alla specialtecken, fixed
+        VARCHAR("\/", 1),       # BUG! VARCHAR måste escapa alla specialtecken, fixed
         ANY(                    # Starts with comma or dot
             @"Edna",
             @"George",

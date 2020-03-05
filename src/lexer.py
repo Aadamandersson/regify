@@ -62,7 +62,9 @@ class Lexer:
         self.get_next_char()
 
         while self.curr_char is not '\0':
-
+            if self.curr_char is '\\' and not self.read_next_char('"'):
+                str_val += '\\\\'
+                
             if self.curr_char is '\\' and self.read_next_char('"'):
                 self.get_next_char()
                 str_val += self.curr_char
@@ -77,6 +79,8 @@ class Lexer:
                 self.get_next_char()
 
         self.get_next_char()
+        print("STRLVAL3: {}".format(str_val))
+
         return str_val
 
     def skip_single_line_comment(self):
@@ -88,7 +92,7 @@ class Lexer:
         while self.curr_char is not '\0':
             if self.curr_char.isalpha() or self.curr_char is '@':
                 _id = self.create_new_ident() 
-                if _id.upper() in self.keywords:
+                if _id in self.keywords:
                     tokens.append((Token.KEYWORD.name, _id, self.row, self.col))
                 else:
                     tokens.append((Token.IDENT.name, _id, self.row, self.col))
@@ -100,7 +104,6 @@ class Lexer:
             elif self.curr_char is '(':
                 tokens.append((Token.L_PAREN.name, self.curr_char, self.row, self.col))
                 self.get_next_char()
-
             elif self.curr_char is ')':
                 tokens.append((Token.R_PAREN.name, self.curr_char, self.row, self.col))
                 self.get_next_char()

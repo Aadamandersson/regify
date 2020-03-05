@@ -6,28 +6,19 @@ class AstVarChar:
         self.text = text
         self.start = start
         self.end = end
-        self.escaped_chars = [
-            '[', ']', '{', '}', '(', ')',
-            '.', '|', '?', '*', '+', '\\', '/'
-        ]
+
 
     def evaluate(self):
-        escaped_text = ""
-        for c in self.text:
-            if c in self.escaped_chars:
-                escaped_text += '\\\\'
-            escaped_text += c
-
         if self.start is "*":
-            return "[{0}]{{0,}}".format(escaped_text)
+            return "[{0}]{{0,}}".format(self.text)
         elif self.start is '+':
-            return "[{0}]{{1,}}".format(escaped_text)
+            return "[{0}]{{1,}}".format(self.text)
         elif self.start is '?':
-            return "[{0}]{{0,1}}".format(escaped_text)
+            return "[{0}]{{0,1}}".format(self.text)
         if self.end is None:
-            return "[{0}]{{{1}}}".format(escaped_text, self.start)
+            return "[{0}]{{{1}}}".format(self.text, self.start)
         else:
-            return "[{0}]{{{1},{2}}}".format(escaped_text, self.start, self.end)
+            return "[{0}]{{{1},{2}}}".format(self.text, self.start, self.end)
 
     def __str__(self):
         return self.evaluate()
@@ -45,7 +36,7 @@ class AstText:
         ]
 
     def evaluate(self):
-        if self.next_tok in ["varchar", "VARCHAR"] and self.text == "[":
+        if self.next_tok == "VARCHAR" and self.text == "[":
             return "\\" + self.text
         elif self.prev_tok == "INLINE":
             return self.text

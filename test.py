@@ -40,18 +40,27 @@ def make_test_grp(num, pattern):
     diff = difflib.unified_diff([target], [str_res], lineterm='')
     print("TEST: {}".format(num))
     return ('\n'.join(diff) is '', '\n'.join(diff))
+
 if __name__ == '__main__':
-    passed = True
-    passed, out = make_test(1, '\[[0-9]{4}::]')
-    if passed is True:
-        print("Passed")
-    else:
-        print("Failed: \n{}\n".format(out))
-    passed, out = make_test(4, '\[[A-Z]{1}[a-z]{,}->]')
-    if passed is True:
-        print("Passed")
-    else:
-        print("Failed: \n{}\n".format(out))
+    data = read_file("datasets/next_level/q11data.txt")
+    hits = read_file("datasets/next_level/q11hits.txt")
+    
+    pattern = ".*(?P<name>[{\/}]{3}[A-Z][a-z]*,).*"
+    result = re.sub(pattern, "(0831)26405997\g<name>{::/}", data)
+    print(result)
+
+
+    # passed = True
+    # passed, out = make_test(1, '\[[0-9]{4}::]')
+    # if passed is True:
+    #     print("Passed")
+    # else:
+    #     print("Failed: \n{}\n".format(out))
+    # passed, out = make_test(4, '\[[A-Z]{1}[a-z]{,}->]')
+    # if passed is True:
+    #     print("Passed")
+    # else:
+    #     print("Failed: \n{}\n".format(out))
     #passed, out = make_test(6, '[-|>|<]{12}')
 
     #if passed is True:

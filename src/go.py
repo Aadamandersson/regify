@@ -22,10 +22,10 @@ if __name__ == '__main__':
     print("SOURCE CODE:\n{}".format(source_code))
     lexer = Lexer(source_code)
     parser = Parser(lexer)
-    expr = parser.parse()
+    ast = parser.parse()
     pattern = ""
-    for e in expr:
-        pattern += e.evaluate()
+    for node in ast:
+        pattern += node.evaluate()
 
     print("RESULT:\n{}".format(pattern))
 

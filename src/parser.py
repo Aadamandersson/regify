@@ -45,7 +45,7 @@ class Parser:
     def parse_args(self, caller):
         children = []
         while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
-            _type = self.curr_token[1].upper()
+            _type = self.curr_token[1]
             if _type == "VARCHAR":
                 self.curr_ident = _type
                 children.append(self.parse_varchar())
@@ -168,7 +168,7 @@ class Parser:
 
         while self.curr_token[0] != Token.EOF.name:
             if self.curr_token[0] == Token.IDENT.name:
-                _type = self.curr_token[1].upper()
+                _type = self.curr_token[1]
                 if _type == "VARCHAR":
                     expr.append(self.parse_varchar())
                 elif self.curr_token[1] == "@":
@@ -183,7 +183,7 @@ class Parser:
                     e = Error("", self.curr_token[1], self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code)
                     e.unexpected_identifier()
             elif self.curr_token[0] == Token.KEYWORD.name:
-                _type = self.curr_token[1].upper()
+                _type = self.curr_token[1]
                 expr.append(self.parse_keyword(_type))
             else:
                 e = Error("", self.curr_token[1], self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code)
