@@ -63,6 +63,7 @@ class Parser:
                 children.append(self.parse_capture_group())
             elif _type == "INLINE" and _type != caller:
                 self.curr_ident = _type
+                self.get_next_token()
                 children.append(self.parse_text())
             elif _type in ["OR", "START", "END"]:
                 self.curr_ident = _type
