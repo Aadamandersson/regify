@@ -1,4 +1,9 @@
-ANY(
-    INLINE @"hello",
-    @"THERE"
+INLINE @"\["
+GROUP(
+    GROUP(
+        ANY(
+            INLINE @"hello",
+            @"THERE"
+        )
+    )
 )

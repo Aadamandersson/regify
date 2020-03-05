@@ -63,7 +63,7 @@ class Lexer:
 
         while self.curr_char is not '\0':
             if self.curr_char is '\\' and not self.read_next_char('"'):
-                str_val += '\\\\'
+                str_val += '\\'
                 
             if self.curr_char is '\\' and self.read_next_char('"'):
                 self.get_next_char()
@@ -79,8 +79,7 @@ class Lexer:
                 self.get_next_char()
 
         self.get_next_char()
-        print("STRLVAL3: {}".format(str_val))
-
+        
         return str_val
 
     def skip_single_line_comment(self):

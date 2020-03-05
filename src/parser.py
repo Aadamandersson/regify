@@ -49,7 +49,7 @@ class Parser:
             if _type == "VARCHAR":
                 self.curr_ident = _type
                 children.append(self.parse_varchar())
-            elif self.curr_token[1] == "@":
+            elif _type == "@":
                 self.curr_ident = self.curr_token[1]
                 children.append(self.parse_text())
             elif _type == "REPEAT" and _type != caller:
@@ -58,14 +58,14 @@ class Parser:
             elif _type == "ANY" and _type != caller:
                 self.curr_ident = _type
                 children.append(self.parse_any())
-            elif _type == "GROUP" and _type != caller:
+            elif _type == "GROUP":
                 self.curr_ident = _type
                 children.append(self.parse_capture_group())
             elif _type == "INLINE" and _type != caller:
                 self.curr_ident = _type
                 self.get_next_token()
                 children.append(self.parse_text())
-            elif _type in ["OR", "START", "END"]:
+            elif _type in ["OR", "START", "END"] and caller not in ["OR", "START", "END"]:
                 self.curr_ident = _type
                 children.append(self.parse_keyword(_type))
             else:
