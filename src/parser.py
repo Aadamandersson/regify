@@ -12,15 +12,15 @@ class Parser:
         self.prev_token = self.curr_token
         self.tok_idx = -1
         self.curr_ident = ""
-        self.get_next_token() 
-   
+        self.get_next_token()
+
     def get_next_token(self):
         self.prev_token = self.curr_token
         self.tok_idx += 1
         if self.tok_idx < len(self.tokens):
             self.curr_token = self.tokens[self.tok_idx]
         return self.curr_token
-    
+
     def expect(self, tok_typ):
         if self.curr_token[0] is not tok_typ:
             print(Error(tok_typ, self.curr_token[1], self.curr_ident, self.curr_token[2], self.curr_token[3], self.source_code))
@@ -41,7 +41,7 @@ class Parser:
     def peek_nth(self, n):
         if self.tok_idx + n < len(self.tokens):
             return self.tokens[self.tok_idx + n]
-    
+
     def parse_args(self, caller):
         children = []
         while self.accept(Token.COMMA.name) or self.curr_token[0] is Token.IDENT.name:
@@ -123,29 +123,29 @@ class Parser:
             prev_ident = self.prev_token[1]
         except:
             pass
-        
+
         self.get_next_token()
         arg1 = self.curr_token[1]
         self.expect(Token.STRING.name)
         return AstText(arg1, prev_ident, self.curr_token[1])
 
     def parse_repeat(self):
-        self.get_next_token() 
+        self.get_next_token()
         self.expect(Token.L_PAREN.name)
         arg1 = self.curr_token[1]
         self.expect(Token.NUM.name)
-        self.get_next_token() 
+        self.get_next_token()
 
-        children = self.parse_args("REPEAT") 
-        ret = AstRepeat(arg1, children) 
+        children = self.parse_args("REPEAT")
+        ret = AstRepeat(arg1, children)
         self.expect(Token.R_PAREN.name)
         return ret
-    
+
     def parse_any(self):
         self.get_next_token()
         self.expect(Token.L_PAREN.name)
 
-        children = self.parse_args("ANY") 
+        children = self.parse_args("ANY")
         ret = AstAny(children)
         self.expect(Token.R_PAREN.name)
         return ret
@@ -193,7 +193,3 @@ class Parser:
                 e.unexpected_identifier()
 
         return expr
-
-
-
-

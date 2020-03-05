@@ -1,0 +1,11 @@
+@"["
+GROUP(
+    ANY(
+        INLINE @"Edna", # BUG! NEEDS comma before INLINE
+        @"Phil",
+        @"Tom",
+        @"George",
+        @"Harry"
+    )
+)
+@"->]"

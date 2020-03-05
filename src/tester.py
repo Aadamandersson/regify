@@ -39,16 +39,17 @@ def head_of_file(path, lines):
     return data
 
 
-def run_test(num):
-    print('========== TESTCASE {} =========='.format(num))
+def run_test(testcase):
+    print('========== TESTCASE {} =========='.format(testcase[0]))
     # Create the paths to the dataset and hits which will be compared to
-    dataset_path = '{}{}'.format(DATASET_FOLDER, '/q{}data.txt'.format(num))
-    hits_path = '{}{}'.format(DATASET_FOLDER, '/q{}hits.txt'.format(num))
+    dataset_path = testcase[1]
+    hits_path = testcase[2]
+    current_test = testcase[3]
+
 
     # Read files and generate the regular expression
     current_dataset = read_file(dataset_path)
     current_target = read_file(hits_path)
-    current_test = '{}{}'.format(TEST_FOLDER, '/q{}.rms'.format(num))
     pattern = reazy.generate_from_file(current_test)
 
 
@@ -89,10 +90,28 @@ def run_test(num):
     print('=================================')
     return success
 
-for x in range(START_TEST_NR, NUM_OF_TESTS):
-    passed = run_test(x+1)
-    if not passed:
-        print ('Testcase {} failed!'.format(x+1))
-        break
-    print('\n')
+def get_testcases(path):
+    csv = []
+    with open(path, "r") as testcases:
+        lines = testcases.readlines()
+        lines = [line.rstrip('\n') for line in lines]
+        for line in lines:
+            csv.append(line.split(' '))
 
+    return csv
+
+# for x in range(START_TEST_NR, NUM_OF_TESTS):
+#     passed = run_test(x+1)
+#     if not passed:
+#         print ('Testcase {} failed!'.format(x+1))
+#         break
+#     print('\n')
+
+
+tests = get_testcases("./testcases.txt")
+print('[+] Loaded {} testcases'.format(len(tests)))
+for x in range(START_TEST_NR, len(tests)):
+    passed = run_test(tests[x])
+    if not passed:
+        print ('Testcase {} failed!'.format(tests[x][0]))
+        break

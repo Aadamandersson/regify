@@ -1,4 +1,4 @@
 ANY(
-    VARCHAR(")(\\/.,", 4),
+    VARCHAR(")(\/.,", 4),
     VARCHAR("-><+", 6)
 )
