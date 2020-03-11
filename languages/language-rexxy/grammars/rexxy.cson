@@ -20,12 +20,12 @@
   }
   {
     'comment': 'Function names'
-    'match': 'GROUP|group|varchar|VARCHAR|ANY|any|REPEAT|repeat'
+    'match': 'GROUP|VARCHAR|ANY|REPEAT'
     'name': 'entity.name.function'
   }
   {
-    'comment': 'Function names'
-    'match': 'OPTIONAL|optional|OR|or|MORE|START|END|INLINE'
+    'comment': 'Function'
+    'match': 'OPTIONAL|OR||MORE|START|END|INLINE'
     'name': 'entity.name.keyword'
   }
   {

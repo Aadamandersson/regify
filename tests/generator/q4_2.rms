@@ -2,7 +2,7 @@
 GROUP(
     ANY(
         INLINE @"Edna", # BUG! NEEDS comma before INLINE
-        @"Phil",
+        GROUP(@"P", @"h", GROUP(@"i" OR, @"j"), @"l")
         @"Tom",
         @"George",
         @"Harry"
