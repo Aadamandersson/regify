@@ -1,16 +1,18 @@
 # regify
-===========
 
-## Documentation can be found at `<https://regify.github.io>`_.
+# [Docs](https://regify.github.io)
 
-Installation
------------------
+# Installation
 
-You can download and install the latest version of this software using pip as below
+You can download and install the latest version of this software using pip as below:
 
     $ pip install regify
 
 ## Usage
+    >>> import regify
+    >>> src = 'VARCHAR("A-Z", 1, 2)'
+    >>> regify.generate(src)
+    '[A-Z]{1,2}'
 
 
 ## Authors
