@@ -9,3 +9,4 @@ regify.egg-info
 build
 src/regify.egg-info
 publish.sh
+notes.txt

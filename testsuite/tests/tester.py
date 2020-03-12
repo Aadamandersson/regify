@@ -6,10 +6,10 @@ import re
 from regify import regify
 
 
-EXECUTABLE='./go.py'
-TEST_FOLDER='./generator/'
-DATASET_FOLDER='../datasets/'
-TEST_CASES = "./testcases.txt"
+EXECUTABLE='./testsuite/tests/go.py'
+TEST_FOLDER='./testsuite/tests/generator/'
+DATASET_FOLDER='./testsuite/datasets/'
+TEST_CASES = "./testsuite/tests/testcases.txt"
 START_TEST_NR=0
 NUM_OF_TESTS=10
 NEXT_LEVEL=False
