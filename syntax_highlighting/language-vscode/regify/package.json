@@ -1,0 +1,34 @@
+{
+    "name": "regify",
+    "displayName": "Regify",
+    "description": "empty",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "regify",
+                "aliases": [
+                    "Regify",
+                    "regify"
+                ],
+                "extensions": [
+                    ".re"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "regify",
+                "scopeName": "source.re",
+                "path": "./syntaxes/regify.tmLanguage.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,3 @@
+VARCHAR("A-Z", 2)
+VARCHAR("az\"", 1)
+@"\"

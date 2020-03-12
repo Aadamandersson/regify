@@ -1,0 +1,58 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Regify",
+	"patterns": [
+		{
+			"include": "#functions"
+		},
+
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"functions": {
+			"name": "entity.name.function.re",
+			"match": "\\b(ANY|VARCHAR|REPEAT|GROUP)\\b"
+		},
+		"keywords": {
+			"name": "keyword.control.re",
+			"match": "\\b(INLINE|OR|MORE|START|END)\\b"
+		},
+		"strings": {
+			"name": "string.quoted.double.re",
+			"begin": "[@]{0,1}\"",
+			"end": "[^\\\\]?\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.re",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"name": "constant.numeric.re",
+			"match": "[0-9]|[\\\\*]|[\\\\+]|[\\\\?]"
+		},
+		"comments": {
+			"name": "comment.line.number-sign.re",
+			"begin": "(\\#)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.comment.re"
+				}
+			},
+			"end": "($)"
+		}
+	},
+	"scopeName": "source.re"
+}
