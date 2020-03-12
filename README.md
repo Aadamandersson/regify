@@ -1,6 +1,8 @@
 # regify
 
-# [Docs](https://regify.github.io)
+# Documentation
+
+Documentation can be found at [https://regify.github.io](https://regify.github.io)
 
 # Installation
 
