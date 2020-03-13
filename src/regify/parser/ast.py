@@ -48,7 +48,6 @@ class AstText:
         if self.next_tok == "VARCHAR" and self.text == "[":
             return "\\" + self.text
         elif self.prev_tok == "INLINE":
-            print("here")
             return self.text
 
         # Else, escape the special characters

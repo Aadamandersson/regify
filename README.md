@@ -1,10 +1,10 @@
 # regify
 
-# Documentation
+## Documentation
 
 Documentation can be found at [https://regify.github.io](https://regify.github.io)
 
-# Installation
+## Installation
 
 You can download and install the latest version of this software using pip as below:
 
@@ -16,6 +16,7 @@ You can download and install the latest version of this software using pip as be
     >>> regify.generate(src)
     '[A-Z]{1,2}'
 
+If you prefer to write in a seperate file and generate the pattern from that, you could use regify.generate_from_file(filepath) instead.
 
 ## Authors
 

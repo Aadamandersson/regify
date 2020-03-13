@@ -57,7 +57,7 @@ class Error:
         # example?
         se = "{}TypeError: {}".format(self.colors[0], self.colors[2])
         ret = """{}{} got an unexpected keyword argument '{}' at line {}, col {}.\n{}\n
-            """.format(se, self.ident, self.found, self.row, self.col,
+            """.format(se, self.found, self.ident, self.row, self.col,
                     self.highlight_error())
         print(ret)
         sys.exit(1)

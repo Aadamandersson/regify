@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from .token import Token
 
-
 class Lexer:
     def __init__(self, source_code):
         self.source_code = source_code
@@ -32,6 +31,7 @@ class Lexer:
             self.curr_char = '\0'
     
     def read_next_char(self, next_char):
+
         self.get_next_char()
         if self.curr_char is not next_char:
             return False
@@ -57,20 +57,24 @@ class Lexer:
         return ident
 
     def create_new_str(self):
-        str_val = ""
+        str_val = ''
         self.get_next_char()
 
         while self.curr_char is not '\0':
-            if self.curr_char is '\\' and not self.read_next_char('"'):
-                str_val += '\\'
-                
-            if self.curr_char is '\\' and self.read_next_char('"'):
+
+            if self.curr_char is '\\':
+                str_val += self.curr_char
                 self.get_next_char()
+            """
+            if self.curr_char is '\\' and self.read_next_char('"'):
                 str_val += self.curr_char
 
                 self.get_next_char()
                 return str_val
-            elif self.curr_char is '"':
+            """
+
+
+            if self.curr_char is '"':
                 self.get_next_char()
                 return str_val
             else:
@@ -78,7 +82,6 @@ class Lexer:
                 self.get_next_char()
 
         self.get_next_char()
-        
         return str_val
 
     def skip_single_line_comment(self):

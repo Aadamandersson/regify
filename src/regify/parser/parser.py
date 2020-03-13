@@ -69,7 +69,7 @@ class Parser:
                 self.curr_ident = _type
                 children.append(self.parse_keyword(_type))
             else:
-                e = Error("", self.curr_token[1], caller, self.curr_token[2], self.curr_token[3], self.source_code)
+                e = Error("", self.curr_ident, caller, self.curr_token[2], self.curr_token[3], self.source_code)
                 e.unexpected_argument()
 
         return children
@@ -100,7 +100,7 @@ class Parser:
                         self.expect(Token.R_PAREN.name)
                         return AstVarChar(arg1, arg2, arg3)
                 else:
-                    e = Error("", self.curr_token[1], arg3, self.curr_token[2], self.curr_token[3], self.source_code)
+                    e = Error("", self.curr_ident, arg3, self.curr_token[2], self.curr_token[3], self.source_code)
                     e.unexpected_argument()
 
         #Should be num or rep..

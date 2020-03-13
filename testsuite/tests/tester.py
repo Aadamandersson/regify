@@ -3,7 +3,8 @@ import os
 import sys
 import difflib
 import re
-from regify import regify
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+from src.regify import generate_from_file
 
 
 EXECUTABLE='./testsuite/tests/go.py'
@@ -52,7 +53,7 @@ def run_test(testcase):
     # Read files and generate the regular expression
     current_dataset = read_file(dataset_path)
     current_target = read_file(hits_path)
-    pattern = regify.generate_from_file(current_test)
+    pattern = generate_from_file(current_test)
 
 
     if VERBOSE:

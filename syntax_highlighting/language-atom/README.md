@@ -1,3 +1,2 @@
-# Rexxy language package
+# regify
 
-A short description of your language package.
