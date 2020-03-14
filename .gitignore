@@ -10,3 +10,4 @@ build
 src/regify.egg-info
 publish.sh
 notes.txt
+prefs.ini
