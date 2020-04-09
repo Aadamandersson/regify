@@ -17,6 +17,11 @@ class Lexer:
         ]
 
     def next_pos(self):
+        """ 
+            Calculates the position for column and row number 
+            in the source which is  passed to the parser 
+            for better error handling.
+        """
         self.char_idx += 1
         if self.curr_char is '\n':
             self.row += 1
@@ -24,6 +29,9 @@ class Lexer:
         self.col += 1
 
     def get_next_char(self):
+        """
+            Gets the next character from the source code.
+        """
         self.next_pos()
         if self.char_idx < len(self.source_code):
             self.curr_char = self.source_code[self.char_idx] 
@@ -31,7 +39,10 @@ class Lexer:
             self.curr_char = '\0'
     
     def read_next_char(self, next_char):
-
+        """
+            Peeks one character in source code 
+            to check if it's a certain char
+        """
         self.get_next_char()
         if self.curr_char is not next_char:
             return False
@@ -59,27 +70,23 @@ class Lexer:
     def create_new_str(self):
         str_val = ''
         self.get_next_char()
-
+        prev_char = ""
+        escaped = False
         while self.curr_char is not '\0':
-
-            if self.curr_char is '\\':
-                str_val += self.curr_char
-                self.get_next_char()
-            """
-            if self.curr_char is '\\' and self.read_next_char('"'):
-                str_val += self.curr_char
-
+            if prev_char is '\\' and self.curr_char is '"':
+                escaped = True
+            if prev_char is '"' and self.curr_char is '"':
                 self.get_next_char()
                 return str_val
-            """
-
-
-            if self.curr_char is '"':
+            elif self.curr_char is '"' and not escaped:
                 self.get_next_char()
                 return str_val
-            else:
-                str_val += self.curr_char
-                self.get_next_char()
+            
+            if prev_char is '"':
+                str_val = str_val[:-1]
+            str_val += self.curr_char
+            prev_char = self.curr_char
+            self.get_next_char()
 
         self.get_next_char()
         return str_val
@@ -89,6 +96,10 @@ class Lexer:
             self.get_next_char()
 
     def lex(self):
+        """
+            Tokenizes the source code.
+            Returns all the tokens created.
+        """
         tokens = []
         while self.curr_char is not '\0':
             if self.curr_char.isalpha() or self.curr_char is '@':
