@@ -26,6 +26,28 @@ function check_directory() {
     fi
 }
 
+function copy_highliter() {
+    PKG_PATH=$(pwd)"/"$INSTALL_PKG_PATH
+    EDITOR_PATH=$HOME$EDITOR_PATH
+
+    check_directory $PKG_PATH
+    check_directory $EDITOR_PATH
+
+
+
+    echo "[+] Copying" $PKG_PATH "into" $EDITOR_PATH
+    cp -rf $PKG_PATH $EDITOR_PATH
+
+    if [[ $? -eq 0 ]]; then {
+        echo "[+] Copied files sucessfully"
+    }
+    else {
+        echo "[-] Copy failed"
+        exit
+    }
+    fi
+}
+
 if [[ -z $1 ]]; then
     echo "usage: " $0 "<atom|vscode|noeditor>"
     exit
@@ -43,6 +65,7 @@ if [[ $1 == "atom" ]]; then {
     check_if_installed atom
     PKG_PATH=$ATOM_PKG
     EDITOR_PATH=$ATOM_INSTALL_PATH
+    copy_highliter
 
 }
     #statements
@@ -50,6 +73,7 @@ elif [[ $1 == "vscode" ]]; then {
     check_if_installed code
     PKG_PATH=$VSCODE_PKG
     EDITOR_PATH=$VSCODE_INSTALL_PATH
+    copy_highliter
 }
 
 elif [[ $1 == "noeditor" ]]; then {
@@ -61,22 +85,19 @@ else {
 }
 fi
 
-PKG_PATH=$(pwd)"/"$INSTALL_PKG_PATH
-EDITOR_PATH=$HOME$EDITOR_PATH
 
-check_directory $PKG_PATH
-check_directory $EDITOR_PATH
+pip3 install regify
+pip3 install simple-crypt
+pip3 install tabulate
 
-
-
-echo "[+] Copying" $PKG_PATH "into" $EDITOR_PATH
-cp -rf $PKG_PATH $EDITOR_PATH
 
 if [[ $? -eq 0 ]]; then {
-    echo "[+] Copied files sucessfully"
+    echo "[+] Installed REgify sucessfully"
 }
 else {
     echo "[-] Copy failed"
     exit
 }
 fi
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
