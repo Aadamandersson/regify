@@ -17,7 +17,7 @@ class AstVarChar:
             if c in self.escaped_chars:
                 escaped_text += '\\'
             escaped_text += c
-            
+
         if self.start is "*":
             return "[{0}]{{0,}}".format(escaped_text)
         elif self.start is '+':
@@ -128,4 +128,6 @@ class AstKeyword:
             return "^"
         elif self._type == "END":
             return "$"
+        elif self._type == "UNTIL":
+            return ".*"
         return ""

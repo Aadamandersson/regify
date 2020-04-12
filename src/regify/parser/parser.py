@@ -65,7 +65,7 @@ class Parser:
                 self.curr_ident = _type
                 self.get_next_token()
                 children.append(self.parse_text())
-            elif _type in ["OR", "START", "END"] and caller not in ["OR", "START", "END"]:
+            elif _type in ["OR", "START", "END", "UNTIL"] and caller not in ["OR", "START", "END", "UNTIL"]:
                 self.curr_ident = _type
                 children.append(self.parse_keyword(_type))
             else:

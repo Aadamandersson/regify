@@ -11,3 +11,6 @@ src/regify.egg-info
 publish.sh
 notes.txt
 prefs.ini
+experiment/log/*
+experiment/task_*/regex_bak.re
+

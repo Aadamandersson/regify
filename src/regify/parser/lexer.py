@@ -13,13 +13,14 @@ class Lexer:
             "OR",
             "MORE",
             "START",
-            "END"
+            "END",
+            "UNTIL"
         ]
 
     def next_pos(self):
-        """ 
-            Calculates the position for column and row number 
-            in the source which is  passed to the parser 
+        """
+            Calculates the position for column and row number
+            in the source which is  passed to the parser
             for better error handling.
         """
         self.char_idx += 1
@@ -34,13 +35,13 @@ class Lexer:
         """
         self.next_pos()
         if self.char_idx < len(self.source_code):
-            self.curr_char = self.source_code[self.char_idx] 
+            self.curr_char = self.source_code[self.char_idx]
         else:
             self.curr_char = '\0'
-    
+
     def read_next_char(self, next_char):
         """
-            Peeks one character in source code 
+            Peeks one character in source code
             to check if it's a certain char
         """
         self.get_next_char()
@@ -81,7 +82,7 @@ class Lexer:
             elif self.curr_char is '"' and not escaped:
                 self.get_next_char()
                 return str_val
-            
+
             if prev_char is '"':
                 str_val = str_val[:-1]
             str_val += self.curr_char
@@ -103,7 +104,7 @@ class Lexer:
         tokens = []
         while self.curr_char is not '\0':
             if self.curr_char.isalpha() or self.curr_char is '@':
-                _id = self.create_new_ident() 
+                _id = self.create_new_ident()
                 if _id in self.keywords:
                     tokens.append((Token.KEYWORD.name, _id, self.row, self.col))
                 else:
