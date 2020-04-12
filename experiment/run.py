@@ -3,12 +3,15 @@ import sys
 import difflib
 from difflib import SequenceMatcher
 import re
-import regify
+#import regify
 import argparse
-from simplecrypt import encrypt, decrypt
+#from simplecrypt import encrypt, decrypt
 import itertools
 import pickle
 import time
+
+sys.path.insert(1, '/Users/ludwighansson/Desktop/rms/src')
+from regify import regify
 
 argparser = argparse.ArgumentParser(description='Experiment manager for REgify')
 
@@ -73,6 +76,8 @@ def get_match_percentage(usr_input, valid):
     for match, val in itertools.zip_longest(usr_input, valid):
         if (match is None):
             match = ''
+        if (val is None):
+            val = ''
         word_percent = SequenceMatcher(None, match, val).ratio()
         if word_percent != 1.0:
             percentage_list.append({ 'index':idx, 'target':val, 'actual':match, 'percent':word_percent})
@@ -109,9 +114,8 @@ def run_task():
     for line in dataset:
         for match in re.findall(pattern, line):
             matches.append(match)
-        # with open('output.txt', 'a+') as file:
-        #         for match in matches[-1]:
-        #             file.write(match + '\n')
+            with open('output.txt', 'a+') as file:
+                file.write(match + '\n')
 
     val = []
     with open(VAL_DATA_PATH, 'r') as file:
