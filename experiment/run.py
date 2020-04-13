@@ -15,7 +15,7 @@ from regify import regify
 
 argparser = argparse.ArgumentParser(description='Experiment manager for REgify')
 
-argparser.add_argument('task',  help='select which task should be run by enterin its number')
+argparser.add_argument('task',  help='select which task should be run by entering its number')
 
 arguments = argparser.parse_args()
 TESTCASE_NUM=arguments.task
