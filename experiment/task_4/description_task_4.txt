@@ -1,0 +1,29 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TASK 4 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This tasks objective is to find all errors, and the message that corresponds to it.
+The error messages always starts with 'error:' and continues until the line ends.
+
+~~~~ API documentation suggestions ~~~~
+
+"Literal text"
+"END"
+"UNTIL"
+
+~~~~ Bugs & Workarounds ~~~~
+
+No bugs found or workarounds needed in this task!
+
+~~~~ Example of matched patterns ~~~~
+
+error: container /dev/rdisk2 is mounted with write access; please re-run with -l.
+error: container /dev/rdisk3 is mounted with write access; please re-run with -l.
+error: container /dev/rdisk1 is mounted with write access; please re-run with -l.
+
+~~~~ Example of input data ~~~~
+
+/dev/rdisk1s2: fsck_apfs started at Sun Jan 19 19:42:38 2020
+/dev/rdisk1s2: ** QUICKCHECK ONLY; FILESYSTEM CLEAN
+/dev/rdisk1s2: fsck_apfs completed at Sun Jan 19 19:42:38 2020
+/dev/rdisk1s4: error: container /dev/rdisk1 is mounted with write access; please re-run with -l.
+/dev/rdisk1s4: fsck_apfs completed at Sun Jan 19 19:42:38 2020

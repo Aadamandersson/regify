@@ -2,8 +2,13 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TASK 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For this task you will have to match a dynamic pattern which is surrounded by 'noise'.
-The pattern begins with a bracket, followed by four digits, and ends with two colons and a closing bracket
+The pattern begins with a bracket, followed by four digits, and ends with two colons and a closing bracket.
 Make sure the noise is not included in the matched pattern.
+
+~~~~ API documentation suggestions ~~~~
+
+"Literal text"
+"VARCHAR"
 
 ~~~~ Bugs & Workarounds ~~~~
 

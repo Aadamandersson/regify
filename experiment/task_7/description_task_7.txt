@@ -1,0 +1,34 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TASK 7 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The objective for this task is to modify an already existing regular expression.
+
+
+
+The last thing to modify is the constraint of the domain name, now it has to be at least 4
+characters or more
+
+~~~~ API documentation suggestions ~~~~
+
+"Literal text"
+"VARCHAR"
+"ANY"
+"GROUP"
+
+~~~~ Bugs & Workarounds ~~~~
+
+No bugs found or workarounds needed in this task!
+
+~~~~ Example of matched patterns ~~~~
+
+href='https://twitter.com/DenysVitali'
+href='https://github.com/denysvitali/'
+href='https://denv.it/'
+href='https://pixabay.com/'
+
+~~~~ Example of input data ~~~~
+
+The author is <a href='https://pixabay.com/en/users/1899441-1899441/'>1899441</a> (seriously? His username looks like my PIN code!),
+the <a href='https://pixabay.com/en/cat-pets-cat-s-eyes-mieze-dear-451377/'>old picture</a> was
+by <a href='https://pixabay.com/en/users/aloiswohlfahrt-123449/'>aloiswohlfahrt</a>,
+but I had to change it, cause it was too heavy and too cute.

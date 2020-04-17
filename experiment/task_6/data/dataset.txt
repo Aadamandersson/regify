@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-traceroute to google.se (172.217.22.163), 64 hops max, 52 byte packets
-1  router.asus.com (192.168.1.1)  6.549 ms  0.893 ms  0.778 ms
-2  h213-142-6-129.cust.a3fiber.se (213.142.6.129)  1.369 ms  1.594 ms  1.377 ms
-3  172.29.45.166 (172.29.45.166)  1.472 ms  1.577 ms  1.417 ms
-4  172.29.45.170 (172.29.45.170)  2.773 ms  1.636 ms  1.649 ms
-5  172.29.45.174 (172.29.45.174)  2.018 ms  1.898 ms  1.961 ms
-6  h188-122-148-114.cust.a3fiber.se (188.122.148.114)  2.211 ms  2.204 ms  1.969 ms
-7  kkr1.ar1.a3network.se (77.53.150.56)  8.118 ms  4.440 ms  4.317 ms
-8  mlm1.cr1.a3network.se (85.8.10.105)  7.285 ms
-   mlm1.cr1.a3network.se (85.8.10.107)  6.343 ms  6.486 ms
-9  sto7.cr1.a3network.se (85.8.10.16)  15.035 ms  14.371 ms  15.070 ms
-10  sto3.cr1.a3network.se (85.8.10.64)  15.933 ms  15.355 ms  14.990 ms
-11  74.125.118.230 (74.125.118.230)  18.393 ms  16.196 ms  15.048 ms
-12  108.170.253.161 (108.170.253.161)  17.181 ms
-    108.170.253.177 (108.170.253.177)  16.397 ms
-    108.170.253.161 (108.170.253.161)  16.525 ms
-13  216.239.58.153 (216.239.58.153)  15.456 ms  15.581 ms
-    216.239.58.147 (216.239.58.147)  15.883 ms
-14  arn09s11-in-f163.1e100.net (172.217.22.163)  16.286 ms  16.349 ms  16.404 ms
-=======
 Name: Bob
 Email: bob@icloud.com
 Name: Lily
@@ -45,4 +24,29 @@ Name: Jil
 Email: jil@att.net
 Name: Solei
 Email: solei@sbcglobal.net
->>>>>>> 6e35669f54c504d12d49a3de1737bcd6fec0249c
+Name: Ron
+Email: Ron@icloud.com
+Name: Fredrik
+Email: fredrik@ericsson.nu
+Name: Gabe
+Email: gaben@valve.cz
+Name: Kelly
+Email: kelly@liveemail.net
+Name: Dennis
+Email: dennis@optonline.net
+Name: Julia
+Email: julia@ic2.com
+Name: Simon
+Email: sim@zone.net
+Name: Denise
+Email: denise@yahoo.com
+Name: Billy
+Email: hillbilly@outlook.se
+Name: Roger
+Email: Roger@outlook.com
+Name: Jerry
+Email: jerry@fullsend.net
+Name: Juul
+Email: juul@att.net
+Name: sigrid
+Email: sigrid@karlskrona.se

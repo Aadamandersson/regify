@@ -4,9 +4,14 @@
 For this task you will have to match a static pattern which is surrounded by 'noise'.
 Make sure the noise is not included in the matched pattern.
 
+~~~~ API documentation suggestions ~~~~
+
+"Literal text"
+
 ~~~~ Bugs & Workarounds ~~~~
 
 No bugs found or workarounds needed in this task!
+
 
 ~~~~ Example of matched patterns ~~~~
 

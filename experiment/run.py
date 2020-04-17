@@ -42,6 +42,7 @@ class LogTaskRun(object):
         self.percentage = percentage
         self.fails = fails
         self.task_run_id = task_run_id
+        self.time = time.time()
 
 
     def __str__(self):

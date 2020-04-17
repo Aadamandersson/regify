@@ -1,0 +1,28 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TASK 5 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For this task you will have to find all usernames in this /etc/passwd file.
+Each user has its own line, and the name is always in the beginning.
+Valid characters for these usernames are both uppercase and lowercase alphanumeric characters, and underscore ('_').
+The name must have at least one character and maximum 64 charactes.
+
+~~~~ API documentation suggestions ~~~~
+
+"START"
+"VARCHAR"
+
+~~~~ Bugs & Workarounds ~~~~
+
+No bugs found or workarounds needed in this task!
+
+~~~~ Example of matched patterns ~~~~
+
+nobody
+root
+_taskgated
+
+~~~~ Example of input data ~~~~
+
+_installassistant:*:25:25:Install Assistant:/var/empty:/usr/bin/false
+_lp:*:26:26:Printing Services:/var/spool/cups:/usr/bin/false
+_postfix:*:27:27:Postfix Mail Server:/var/spool/postfix:/usr/bin/false

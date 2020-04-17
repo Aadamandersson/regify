@@ -1,0 +1,34 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TASK 3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This task is built upon a syslog dump that Jerry has provided from his MacBook Pro. This tasks
+objective is to find all hexadecimal numbers in the file
+
+A hexadecimal number always begin with '0x' and follows by one or more characters valid for hexadecimal numnber (0 to 9, a-f)
+
+~~~~ API documentation suggestions ~~~~
+
+"Literal text"
+"VARCHAR"
+
+~~~~ Bugs & Workarounds ~~~~
+
+No bugs found or workarounds needed in this task!
+
+~~~~ Example of matched patterns ~~~~
+
+0x5e92bf82
+0x57eb1
+0x7fce79c1f140
+0x7fce79c1f140
+0x7fff93b87508
+0x10abe91f8
+
+~~~~ Example of input data ~~~~
+
+Apr 12 11:28:06 Jerrys-MBP timed[126]: settimeofday({0x5e92df26,0x56469}) == 0
+Apr 12 11:28:06 Jerrys-MBP timed[126]: settimeofday({0x5e92df26,0x56469}) == 0
+Apr 12 12:28:11 Jerrys-MBP syslogd[88]: ASL Sender Statistics
+Apr 12 12:28:11 Jerrys-MBP syslogd[88]: ASL Sender Statistics
+Apr 12 12:28:12 Jerrys-MBP timed[126]: settimeofday({0x5e92ed3c,0x400c0}) == 0
+Apr 12 12:28:12 Jerrys-MBP timed[126]: settimeofday({0x5e92ed3c,0x400c0}) == 0
