@@ -1,0 +1,24 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TASK 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For this task you will have to match a dynamic pattern which is surrounded by 'noise'.
+The pattern begins with a bracket, followed by four digits, and ends with two colons and a closing bracket
+Make sure the noise is not included in the matched pattern.
+
+~~~~ Bugs & Workarounds ~~~~
+
+No bugs found or workarounds needed in this task!
+
+~~~~ Example of matched patterns ~~~~
+
+[9228::]
+[6884::]
+[4909::]
+[0718::]
+
+~~~~ Example of input data ~~~~
+
+phi010110Satfubar[9228::]Thu2.82.8Greentao
+JulNILL$$$001010Sep`[6884::]OrangeMonRed$BLACKchi110110VOIDNULL001110fubar 3.14"
+foo$$Red[4909::]taoNILLAprOcttaofubar[0718::]JunSatRedfubar$$010001Purple111010
+[8788::][3885::]NULL[1455::]WHITE"Sun110010$$WHITE111001SatWHITESep[6655::]BLACKphichiHITE$$1110013.14153TueBLACK[/<-\\.//->\]taoRedBlue'phiBLACKSunFeb'101100'

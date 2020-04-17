@@ -12,19 +12,27 @@ import time
 
 sys.path.insert(1, '/Users/ludwighansson/Desktop/rms/src')
 from regify import regify
-
 argparser = argparse.ArgumentParser(description='Experiment manager for REgify')
 
-argparser.add_argument('task',  help='select which task should be run by enterin its number')
+argparser.add_argument('lang', help='Language to be run, should be \'regify\' or \'regex\'')
+argparser.add_argument('task', help='select which task should be run by enterin its number')
 
 arguments = argparser.parse_args()
 TESTCASE_NUM=arguments.task
 
+RUN_REGIFY_LANG = True
+if arguments.lang == 'regex':
+    RUN_REGIFY_LANG = False
+elif arguments.lang == 'regify':
+    pass
+else:
+    print('Invalid argument for --lang! Got {}'.format(arguments.lang))
+    sys.exit(-1)
+
 REGEX='task_{}/regex.re'.format(TESTCASE_NUM)
+REGIFY='task_{}/regify.re'.format(TESTCASE_NUM)
 DATASET_PATH='task_{}/data/dataset.txt'.format(TESTCASE_NUM)
 VAL_DATA_PATH='task_{}/data/valid.txt'.format(TESTCASE_NUM)
-
-LOG_PATH='log/task_{}.txt'.format(TESTCASE_NUM)
 
 class LogTaskRun(object):
     """docstring for LogTaskRun."""
@@ -35,8 +43,9 @@ class LogTaskRun(object):
         self.fails = fails
         self.task_run_id = task_run_id
 
+
     def __str__(self):
-        return 'task_run_id: {}\npercentage: {:.2f}%\nfails: {}\npattern: {}'.format(self.task_run_id, self.percentage, self.fails, self.pattern)
+        return 'task_run_id: {}\npercentage: {:.2f}%\nfails: {}\npattern: {}'.format(self.task_run_id, self.percentage, len(self.fails), self.pattern)
 
 # CAPTURE
 # 1. Runs
@@ -93,12 +102,20 @@ def store_logdata(pattern, percentage, fails):
 
     logdata = []
 
+    lut = ['regex', 'regify']
+    LOG_PATH='log/task_{}_{}.txt'.format(TESTCASE_NUM, lut[int(RUN_REGIFY_LANG)] )
+
     if os.path.exists(LOG_PATH):
         logdata = pickle.load(open(LOG_PATH, 'rb'))
 
+    perfect_match = False
+    if (percentage is 100.0):
+        perfect_match = True
+
     logdata.append(LogTaskRun(pattern, percentage, fails, len(logdata)))
     pickle.dump(logdata, open(LOG_PATH, 'wb+'))
-    print(logdata[-1])
+    print('Task attempt: {}' .format(logdata[-1].task_run_id))
+
 
 def run_task():
     print('========== EXPERIMENT TASK {} =========='.format(TESTCASE_NUM))
@@ -106,7 +123,15 @@ def run_task():
     # Read files and generate the regular expression
     dataset = read_file(DATASET_PATH).split('\n')
     current_target = read_file(VAL_DATA_PATH)
-    pattern = regify.generate_from_file(REGEX)
+    pattern = ''
+    if RUN_REGIFY_LANG:
+        pattern = regify.generate_from_file(REGIFY)
+    else:
+        pattern = read_file(REGEX).split('\n')[0]
+
+    if (len(pattern) <= 0):
+        print("Nothing in regex.re/regify.re file for this task yet!")
+        sys.exit(-1)
 
 
     # Pass the pattern generated to RE and find all matches in the loaded dataset

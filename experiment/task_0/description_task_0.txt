@@ -1,0 +1,25 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TASK 0 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For this task you will have to match a static pattern which is surrounded by 'noise'.
+Make sure the noise is not included in the matched pattern.
+
+~~~~ Bugs & Workarounds ~~~~
+
+No bugs found or workarounds needed in this task!
+
+~~~~ Example of matched patterns ~~~~
+
+[/<-\\.//->\]
+[/<-\\.//->\]
+[/<-\\.//->\]
+[/<-\\.//->\]
+[/<-\\.//->\]
+
+~~~~ Example of input data ~~~~
+
+[/<-\\.//->\]VOIDNovWHITE000101$$$"NULL $OctWHITEphiJunSunBLACKMay$$[/<-\\.//->\]Sun010011NULL
+3.14153blahBLACKGreenBLACK111111Seppichipi3.1415[/<-\\.//->\]NovFri[/<-\\.//->\]
+fooNULLNULL'2.8RedAugfubarBLACKpiBLACK2.8Greenfoo$NILLfooWHITEYellowblah100111
+WHITEMay3.1415[/<-\\.//->\]pipi
+chi[/<-\\.//->\]pi$$WHITE$$1110013.14153TueBLACK[/<-\\.//->\]taoRedBlue'phiBLACKSunFeb'101100'
