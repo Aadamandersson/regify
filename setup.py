@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
    name='regify',
-   version='0.2',
+   version='0.3',
    description="Python library for writing regular expressions.",
    license="MIT",
    author="Adam Andersson & Ludwig Hansson",

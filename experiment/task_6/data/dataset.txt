@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 traceroute to google.se (172.217.22.163), 64 hops max, 52 byte packets
 1  router.asus.com (192.168.1.1)  6.549 ms  0.893 ms  0.778 ms
 2  h213-142-6-129.cust.a3fiber.se (213.142.6.129)  1.369 ms  1.594 ms  1.377 ms
@@ -17,3 +18,31 @@ traceroute to google.se (172.217.22.163), 64 hops max, 52 byte packets
 13  216.239.58.153 (216.239.58.153)  15.456 ms  15.581 ms
     216.239.58.147 (216.239.58.147)  15.883 ms
 14  arn09s11-in-f163.1e100.net (172.217.22.163)  16.286 ms  16.349 ms  16.404 ms
+=======
+Name: Bob
+Email: bob@icloud.com
+Name: Lily
+Email: Lily@sbcglobal.net
+Name: Golum
+Email: golum@aol.com
+Name: Mark
+Email: mark@live.com
+Name: Dennis
+Email: dennis@optonline.net
+Name: Adam
+Email: adam_1337@icloud.com
+Name: Ludwig
+Email: Ludwig@outlook.com
+Name: Denise
+Email: denise@yahoo.com
+Name: Ben
+Email: ben@outlook.se
+Name: Roger
+Email: Roger@outlook.com
+Name: Berry
+Email: berry@icloud.com
+Name: Jil
+Email: jil@att.net
+Name: Solei
+Email: solei@sbcglobal.net
+>>>>>>> 6e35669f54c504d12d49a3de1737bcd6fec0249c

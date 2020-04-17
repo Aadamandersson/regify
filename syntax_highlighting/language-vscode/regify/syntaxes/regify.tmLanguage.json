@@ -26,7 +26,7 @@
 		},
 		"keywords": {
 			"name": "keyword.control.re",
-			"match": "\\b(INLINE|OR|MORE|START|END)\\b"
+			"match": "\\b(INLINE|OR|MORE|START|END|UNTIL)\\b"
 		},
 		"strings": {
 			"name": "string.quoted.double.re",
