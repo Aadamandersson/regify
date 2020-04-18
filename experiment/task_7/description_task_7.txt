@@ -3,10 +3,12 @@
 
 The objective for this task is to modify an already existing regular expression.
 
+The regular expression provided are currently filtering on specific URL domains,
+which now has to be extended.
+You will have to add the domain names 'pixabay' and 'twitter' to complete this task
 
-
-The last thing to modify is the constraint of the domain name, now it has to be at least 4
-characters or more
+t also filters out the <span> HTML tags, and now you will have to add support to filter
+out the <h2> tags as well.
 
 ~~~~ API documentation suggestions ~~~~
 
@@ -14,21 +16,32 @@ characters or more
 "VARCHAR"
 "ANY"
 "GROUP"
+"UNTIL"
 
 ~~~~ Bugs & Workarounds ~~~~
 
-No bugs found or workarounds needed in this task!
+INLINE has to be used in this task in order to match everything except a singe quote since
+it isn't supported in regify at this state of development.
 
 ~~~~ Example of matched patterns ~~~~
 
-href='https://twitter.com/DenysVitali'
-href='https://github.com/denysvitali/'
-href='https://denv.it/'
-href='https://pixabay.com/'
+<h2>Seriously, you guys think that a fucking website doesn't need some styling?</h2>
+<h2>The best kick-ass website</h2>
+<h2>Well guess what, motherfucker:</h2>
+href='https://imgur.com/gallery/u8asnn3'
 
 ~~~~ Example of input data ~~~~
 
-The author is <a href='https://pixabay.com/en/users/1899441-1899441/'>1899441</a> (seriously? His username looks like my PIN code!),
-the <a href='https://pixabay.com/en/cat-pets-cat-s-eyes-mieze-dear-451377/'>old picture</a> was
-by <a href='https://pixabay.com/en/users/aloiswohlfahrt-123449/'>aloiswohlfahrt</a>,
-but I had to change it, cause it was too heavy and too cute.
+<body>
+    <h1>This is the <i>best</i> motherfucking website.</h1>
+    <p class='st'>Really, it is.</p>
+    <h2>Seriously, you guys think that a fucking website doesn't need some styling?</h2>
+    <p>You probably build websites using vim and feeling hardcore. You think your 4.99KB <span class='mfw'>motherfuckingwebsite</span>(.com) is going to get you some fucking award to put on your damn footer as a link. You think your fucking default
+        font is gonna make your website run even on a toaster.</p>
+    <p><span class='wr'>WRONG</span>, motherfucker.</p>
+    <h2>The best kick-ass website</h2>
+    <p>Let me describe the <i>real</i> perfect-ass website which still has the glory of the past <span class='mfw'>motherfuckingwebsites</span>:</p>
+    <ul>
+        <li>Shit doesn't weigh a ton (in fact it's just 34.97 KB when the 27.83KB cat picture below is removed)</li>
+        <li>The page weighs exactly 63.02kB, 93.7% less than the <a href='https://google.com/'>Google home page</a></li>
+        <li>Fits on your iPhone 1st gen (although it doesn't work on your damn 16x32 Tamagotchi)</li>

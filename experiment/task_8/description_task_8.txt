@@ -1,0 +1,35 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TASK 8 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The objective for this task is to modify an already existing regular expression.
+
+In this task there is three patterns to be matched, which are surrounded by noise.
+Change the regular expression to also match the name 'Tom', and the static pattern '[<-\]'
+
+~~~~ API documentation suggestions ~~~~
+
+"Literal text"
+"VARCHAR"
+"ANY"
+"GROUP"
+"REPEAT"
+
+~~~~ Bugs & Workarounds ~~~~
+
+No bugs found or workarounds needed in this task!
+
+~~~~ Example of matched patterns ~~~~
+
+.::,::
+[/Tom]
+.::,::
+[<-\]
+.:;:,::
+[/->]
+
+~~~~ Example of input data ~~~~
+
+.::,::phiVOIDWHITE"$$$ 3.14VOIDfubar3.1415Wed$$$GreenWHITEfooBLACK[/Tom]fubar
+.::,::TueNULL$`'fubar0[<-\]00100NILLWHITE$001010taoWHITE.:;:,::`Nov011010[/->]3.14
+3.1415$$110101pi$$$Greentao
+Tue$$$2.8

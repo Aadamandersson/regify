@@ -1,27 +1,27 @@
-href='https://fonts.googleapis.com/css?family=Open+Sans'
-href='https://google.com/'
-href='https://www.w3.org/TR/WCAG20/'
-href='https://en.wikipedia.org/wiki/ARPANET'
-href='https://en.wikipedia.org/wiki/IP_over_Avian_Carriers'
-href='https://en.wikipedia.org/wiki/HTTPS'
-href='https://en.wikipedia.org/wiki/gTLD'
-href='https://letsencrypt.org/'
-href='https://nginx.com/'
-href='https://microsoft.com/ie'
-href='https://mozilla.com/firefox'
-href='https://en.wikipedia.org/wiki/HTTP/2'
-href='https://piwik.org/'
-href='https://enable-cors.org/'
-href='https://www.w3.org/WAI/intro/accessibility.php'
+<h2>Seriously, you guys think that a fucking website doesn't need some styling?</h2>
+<h2>The best kick-ass website</h2>
+<h2>Well guess what, motherfucker:</h2>
+href='https://imgur.com/gallery/u8asnn3'
 href='https://github.com/denysvitali/thebestmotherfuckingwebsite/'
+<h2>Put even less contrast</h2>
+<h2>Size matters,<a href='https://imgur.com/gallery/u8bkoIX'> yeah, but don't exaggerate</h2>
+<h2>Put some pictures</h2>
+<h2>Yes, even this is satire.</h2>
+<span>Good design is as little design as possible.</span>
+<h2>Epilogue</h2>
+<h2>Author</h2>
+<span>“Light travels faster than sound. This is why some people appear bright until they speak.” – Steven Wright</span>
 href='https://twitter.com/DenysVitali'
 href='https://github.com/denysvitali/'
-href='https://denv.it/'
+<h2>Resources</h2>
 href='https://pixabay.com/'
 href='https://pixabay.com/en/users/1899441-1899441/'
 href='https://pixabay.com/en/cat-pets-cat-s-eyes-mieze-dear-451377/'
 href='https://pixabay.com/en/users/aloiswohlfahrt-123449/'
 href='https://github.com/denysvitali/thebestmotherfuckingwebsite/issues/new'
+<h2>Legal</h2>
+href='https://imgur.com/gallery/u8bkoIX'
+<h2>Contributions</h2>
 href='https://github.com/beardog108'
 href='https://github.com/denysvitali/thebestmotherfuckingwebsite/issues/5'
 href='https://github.com/5ilver'
@@ -34,15 +34,14 @@ href='https://github.com/glodime'
 href='https://github.com/denysvitali/thebestmotherfuckingwebsite/issues/12'
 href='https://github.com/arthurtiteica'
 href='https://github.com/vktec'
+href='https://imgur.com/gallery/u8asd23'
 href='https://github.com/denysvitali/thebestmotherfuckingwebsite/issues/9'
-href='https://en.wikipedia.org/wiki/RAS_syndrome'
 href='https://github.com/friendlyanon'
 href='https://github.com/C-Lodder'
-href='https://github.com/Zsavajji'
-href='https://github.com/CapacitorSet'
+<span><a href='https://github.com/Zsavajji'>@Zsavajji</a></span><span class='separator'>, </span><span><a href='https://github.com/CapacitorSet'>@CapacitorSet</a></span><span class='separator'>, </span>
 href='https://github.com/danielquinn'
-href='https://github.com/ehea617'
+<span><a href='https://github.com/ehea617'>@ehea617</a></span><span class='separator'>, </span>
 href='https://github.com/MrSaad'
-href='https://github.com/tqdv'
+<span><a href='https://github.com/tqdv'>@tqdv</a></span><span class='separator'>, </span>
 href='https://github.com/mothinx'
-href='https://github.com/denysvitali/thebestmotherfuckingwebsite/pulls?q=is%3Apr+is%3Aclosed+label%3A%22spell+checking%22'
+<span> for <a href='https://github.com/denysvitali/thebestmotherfuckingwebsite/pulls?q=is%3Apr+is%3Aclosed+label%3A%22spell+checking%22'>their help in spell checking</a></span>

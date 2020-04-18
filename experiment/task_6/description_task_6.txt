@@ -3,10 +3,10 @@
 
 The objective for this task is to modify an already existing regular expression.
 The user that wrote this regex in the past only wanted to match email adresses
-that ended with '.com', but now it has to be extended to also match '.net' and '.se' adresses.
+that ended with '.com' and '.net', but now it has to be extended to also match '.se' adresses.
 
 The last thing to modify is the constraint of the domain name, now it has to be at least 4
-characters or more
+characters or more for the pattern to be valid
 
 ~~~~ API documentation suggestions ~~~~
 
@@ -21,17 +21,17 @@ No bugs found or workarounds needed in this task!
 
 ~~~~ Example of matched patterns ~~~~
 
-denise@yahoo.com
-Roger@outlook.com
-berry@icloud.com
+bob@icloud.com
+Lily@sbcglobal.net
+mark@live.com
 
 ~~~~ Example of input data ~~~~
 
-Name: Billy
-Email: hillbilly@outlook.se
-Name: Roger
-Email: Roger@outlook.com
-Name: Jerry
-Email: jerry@fullsend.net
-Name: Juul
-Email: juul@att.net
+Name: Bob
+Email: bob@icloud.com
+Name: Lily
+Email: Lily@sbcglobal.net
+Name: Golum
+Email: golum@aol.com
+Name: Mark
+Email: mark@live.com

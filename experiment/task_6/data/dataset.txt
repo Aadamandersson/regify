@@ -50,3 +50,11 @@ Name: Juul
 Email: juul@att.net
 Name: sigrid
 Email: sigrid@karlskrona.se
+Name: Rune
+Email: badboyrune@smag.com
+Name: Johnny
+Email: johnny@fullsend.net
+Name: Gustav
+Email: gustavxvi@att.sh
+Name: TorPeder
+Email: torpeder@karlskrona.se

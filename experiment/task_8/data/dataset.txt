@@ -1,8 +1,8 @@
-.::,::phiVOIDWHITE"$$$ 3.14VOIDfubar3.1415Wed$$$GreenWHITEfooBLACK[/Edna]fubar
-.::,::TueNULL$`'fubar0[/->]00100NILLWHITE$001010taoWHITE.:;:,::`Nov011010[/->]3.14
+.::,::phiVOIDWHITE"$$$ 3.14VOIDfubar3.1415Wed$$$GreenWHITEfooBLACK[/Tom]fubar
+.::,::TueNULL$`'fubar0[<-\]00100NILLWHITE$001010taoWHITE.:;:,::`Nov011010[/->]3.14
 3.1415$$110101pi$$$Greentao
 Tue$$$2.8
-Aprtao piSunfubarMonNULLblah3.14153`Sun001101taopiWedMay.::.:;:'Sat
+Aprtao piSunfubarMonNULLbla[<-\]h3.14153`Sun001101taopiWedMay.::.:[<-\];:'Sat
 [\Phil]"VOIDTueNILLOrangeNULLYellowRed$$$"Red
 [/Edna]taoRedJunNULL,::,:;:[/Phil]`'$$$fooblahfoo`phi[\George]tao,:;:,:;:fooTue
 ,:;:.::'3.1415phi1101[/->]10BlueNILLblahblahphi[\Phil]RedfooRedGreenSat,:;:.::,:;:,:;:Sat
@@ -10,20 +10,20 @@ NILL3.1415[/->]3,:;:,::
 `chi000000blahfoo
 MonBluefooBLACK[/Phil]May'NILLYellowNILLblah110101BLACKSatBLACK3.141532.8111110
 FebBLACK`Wed
-NILL,:;:.::
+NILL,:;:.::[<-\]
 Wedpi
-Mar [/Harry]WedVOIDchi `Sep[\Harry]BLACKBLACKSat$ 3.14VOIDfoo ThublahRedtao
-[\Phil]Purplechi"pi$$$ 101101SepphiYellow,::,:;:3.14.::.::,:;:.:;:3.1415Ye[/->]llow.::.:;:$$
+Mar [/Harry]WedV[<-\]OIDchi `Sep[\Harry]BLACKBLACKSat$ 3.14VOIDfoo ThublahRedtao
+[\Phil]Purplechi"pi$$$ 101101Sep[<-\]phiYellow,::,:;:3.14.::.[<-\]::,:;:.:;:3.1415Ye[/->]llow.::.:;:$$
 'WHITEYellowWHITEBLACKYellowFriMarblah,::,::0101113.14152.8Sat'011111BlueThuNILL
 $$Yellow2.8,::,:;:ThuNILL3.14153T[/->]huPurple$$ 3.1415''VOIDSun,:;:,:;:$$$WHITE$Sat'
 NILL,:;:.::OrangeVOIDBLACK3.14153GreenSepblah000000Aug"'WedJanNULL"May[/->]BLACK$[\Edna]
 NULLNULLphi$$$110011Tue'Jun$[/Edna]
-Sun AugApr'3.1415NILLSep3.14101100Orange'taoWHITEWHITEtaoVOIDJanfubar$$BLACKblah
+Sun AugApr'3.1415NILLSep3.14101100Ora[<-\]nge'taoWHITEWHITEtaoVOIDJanfubar$$BLACKblah
 Jul$$$blahBLACKNILL`phipi111110
 Sep001000BlueSepSat
 3.14153[/->]$
 MonNov3.14fubarFriFeb[/George]VOIDSat.:;:,::'$$$$$$WHITE$$Sun[\Tom]110010NILL
-NULL''$$Orange3.1415.:;:.::NULL011000"1101110011013.14$$[\Edna]tao`000111phi011000
+NULL''$$Orange3.1415.:;:.::NULL011000"1101110011013.14$$[<-\][\Edna]tao`000111phi011000
 Thu.:;:.:;:JanWHITE"fooThu'$$phi$$$3.14153.::.:;:001101Jul3.1415chiphiGreenp[/->]hifubar
 taoWHITEpifubarNILLDecVOID$$$[\George]Jun$$$Thu,::,:;:piDecYellow"110100$$$"2.8pi`
 3.1415OrangefooNULL`WHITEGreen2.81011[/->]00foo001010Thu$$WedWHITENILL"Fri$fubarSunNILLBlue
@@ -36,13 +36,13 @@ SatWHITEJan"3.14$fubar$3.14blahfubarfubar"[\Edna]`"BLACKThu
 NULLSat001110`$$110111.:;:,::Oct fooSat3.14$$$$Purple3.1415BLACK$$JulDecSun$Sat
 Red[/Phil]011110[/->]Tue WHITENov010101,::.:: WHITE`phi$3.14153Green010101
 BLACKMayVOID"tao111110blah'NILL$$Red3.14Blue.::.:: chiWHITE"phi$$$Thu`"piWHITE
-blah111010[/Tom]$$phi111111blahNULLWHITE[/Phil]2.8Fri111011 AprThuVOID3.14[\Edna]
+blah111010[/Tom]$$phi111111blahNULLWHITE[/Phil]2.8F[<-\]ri111011 AprThuVOID3.14[\Edna]
 3.14153NovNULL,::,::2.8.::,:: $$ThuJanYellow,::,:;:blah[/Tom]WedfubarAug$$Blue
 Dec[\Phil]100110$chiFriPurple[/->]pi$Jan110110BLACK
 BLACKphiGreen3.14$$$fubar`WHITE3.1415
 ,:;:.:;:$$.:;:.:;:'.::.::2.8 taotaofubartaofooSep100111fooPurple"BLACKVOIDMon
 3.14WHITEchiSatpiPurpleNULL,::.::[/Tom][\George] WHITEphiThuMar3.14153Satfubar BLACK
-VOID010011.::.::[/Tom]NILL`101100$$BlueGreenDecblahTueOctSunVOIDtao2.82.8BLACK$$$$$
+VOID010011.::.::[/Tom]NILL`101100$$BlueGreenDe[<-\]cblahTueOctSunVOIDtao2.82.8BLACK$$$$$
 NILLSunOrangefoo
 '000010,:;:.::$$WHITE010110blah" ''pi[/George]001001Fri"SunNILLfooNULL,:;:.::Wed
 [\Harry]$fubarPurple`foofooYellowTueblah"3.14153VOIDfubarGreen`.:;:,:;: PurpleNILL

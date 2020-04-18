@@ -14,7 +14,6 @@ ANY(
         ANY(
             @"Edna",
             @"George",
-            @"Tom",
             @"Phil",
             @"Harry"
         ),

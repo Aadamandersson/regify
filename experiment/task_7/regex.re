@@ -1,0 +1,1 @@
+(?:href='https:\/\/(?:github|imgur)[^']*')|(?:<span>.*<\/span>)

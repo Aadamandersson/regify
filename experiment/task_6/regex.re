@@ -1,9 +1,1 @@
-@"("
-    REPEAT(3,
-        VARCHAR("0-9", 1, 3),
-        @"."
-    )
-    # Since there shouldnt be a dot after the last number,
-    # this has to be outside of the REPEAT
-    VARCHAR("0-9", 1, 3)
-@")"
+(?:[A-Za-z0-9_]{1,}@[A-Za-z]{1,}(?:\.com|\.net))
