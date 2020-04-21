@@ -12,5 +12,6 @@ publish.sh
 notes.txt
 prefs.ini
 experiment/log/*
+experiment/log2/*
 experiment/task_*/regex_bak.re
 

@@ -1,4 +1,4 @@
-ANY(
+ANY(                                # Can be any of these three patterns
     REPEAT(2,
         GROUP(
             ANY(                    # Starts with comma or dot
@@ -8,16 +8,19 @@ ANY(
             VARCHAR(".;:", 2, 3)
         )
     ),
-    GROUP(
-        @"[",
-        VARCHAR("\/", 1),
-        ANY(
+    GROUP(                      # Name pattern
+        @"[",                       # Opens with bracket
+        VARCHAR("\/", 1),           # Can be forward or backslash
+        ANY(                        # Any of these names
             @"Edna",
             @"George",
             @"Phil",
             @"Harry"
         ),
-        @"]"
+        @"]"                        # Ends with bracket
     )
-    @"[/->]"
+    @"[/->]"                        # Static pattern
 )
+
+
+

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ATOM_PKG="syntax_highlighting/language-regify"
-VSCODE_PKG="syntax_highlighting/language-vscode"
+VSCODE_PKG="syntax_highlighting/language-vscode/regify"
 
 ATOM_INSTALL_PATH="/.atom/packages"
 VSCODE_INSTALL_PATH="/.vscode/extensions"
