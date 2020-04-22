@@ -2,9 +2,9 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TASK 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This task is built upon a syslog dump that Jerry has provided from his MacBook Pro,
-but now he wants to find all processes and services that exists in the logfile.
+and now he need help  to find all processes and services that exists in the logfile.
 
-The pattern for a process in this logfile is built from 1 to N lowercase alpha (a-z) characters,
+The pattern for a process in this logfile is built from 1 to N upper- or lowercase alpha (a-z, A-Z) characters,
 followed by brackets containing a number (1 to N digits)
 
 ~~~~ API documentation suggestions ~~~~
@@ -24,6 +24,7 @@ launchd[1]
 objc[16675]
 remindd[16675]
 launchd[1]
+AGMService[387]
 
 ~~~~ Example of input data ~~~~
 

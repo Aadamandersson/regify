@@ -2,7 +2,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TASK 4 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This tasks objective is to find all errors, and the message that corresponds to it.
-The error messages always starts with 'error:' and continues until the line ends.
+The error messages always begin with 'error:' and continues until the line ends.
 
 ~~~~ API documentation suggestions ~~~~
 

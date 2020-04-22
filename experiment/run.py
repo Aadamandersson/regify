@@ -9,6 +9,7 @@ import argparse
 import itertools
 import pickle
 import time
+from logtaskrun import LogTaskRun
 
 sys.path.insert(1, '/Users/ludwighansson/Desktop/rms/src')
 from regify import regify
@@ -33,20 +34,6 @@ REGEX='task_{}/regex.re'.format(TESTCASE_NUM)
 REGIFY='task_{}/regify.re'.format(TESTCASE_NUM)
 DATASET_PATH='task_{}/data/dataset.txt'.format(TESTCASE_NUM)
 VAL_DATA_PATH='task_{}/data/valid.txt'.format(TESTCASE_NUM)
-
-class LogTaskRun(object):
-    """docstring for LogTaskRun."""
-
-    def __init__(self, pattern, percentage, fails, task_run_id):
-        self.pattern = pattern
-        self.percentage = percentage
-        self.fails = fails
-        self.task_run_id = task_run_id
-        self.time = time.time()
-
-
-    def __str__(self):
-        return 'task_run_id: {}\npercentage: {:.2f}%\nfails: {}\npattern: {}'.format(self.task_run_id, self.percentage, len(self.fails), self.pattern)
 
 # CAPTURE
 # 1. Runs
@@ -136,12 +123,12 @@ def run_task():
 
 
     # Pass the pattern generated to RE and find all matches in the loaded dataset
-    matches = []
-    for line in dataset:
-        for match in re.findall(pattern, line):
-            matches.append(match)
-            with open('output.txt', 'a+') as file:
-                file.write(match + '\n')
+    # matches = []
+    # for line in dataset:
+    #     for match in re.findall(pattern, line):
+    #         matches.append(match)
+    #         with open('output.txt', 'a+') as file:
+    #             file.write(match + '\n')
 
     val = []
     with open(VAL_DATA_PATH, 'r') as file:
