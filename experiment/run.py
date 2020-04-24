@@ -123,12 +123,12 @@ def run_task():
 
 
     # Pass the pattern generated to RE and find all matches in the loaded dataset
-    # matches = []
-    # for line in dataset:
-    #     for match in re.findall(pattern, line):
-    #         matches.append(match)
-    #         with open('output.txt', 'a+') as file:
-    #             file.write(match + '\n')
+    matches = []
+    for line in dataset:
+        for match in re.findall(pattern, line):
+            matches.append(match)
+            with open('output.txt', 'a+') as file:
+                file.write(match + '\n')
 
     val = []
     with open(VAL_DATA_PATH, 'r') as file:
